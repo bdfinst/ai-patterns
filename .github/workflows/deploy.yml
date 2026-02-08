@@ -20,8 +20,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          pip install mkdocs mkdocs-material pymdown-extensions
+        run: pip install -r requirements.txt
 
       - name: Build docs
         run: mkdocs build
