@@ -2,7 +2,7 @@
 
 The current patterns I use for delivering software with AI agents.
 
-[View the Documentation](https://bryanfinster.substack.com/p/ai-is-a-high-pass-filter-for-software)
+[View the Documentation](https://bdfinst.github.io/ai-patterns/)
 
 ## Local Development
 
