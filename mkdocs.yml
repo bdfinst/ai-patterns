@@ -21,7 +21,6 @@ extra_css:
   - css/timestamps.css
 
 extra_javascript:
-  - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
   - js/mermaid-init.js
 
 plugins:
@@ -33,7 +32,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_div_format
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.details
   - pymdownx.tabbed
   - attr_list
