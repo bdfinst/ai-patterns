@@ -84,6 +84,27 @@ If the Actions workflow fails:
    - YAML syntax errors: Verify `.github/workflows/deploy.yml` formatting
    - Python version issues: Workflow uses Python 3.11
 
+### Permission Denied Error (403)
+
+If you see: `remote: Permission to <user>/<repo>.git denied to github-actions[bot]`
+
+**Solution:**
+
+1. **Check repository settings:**
+   - Go to Settings → Actions → General
+   - Under "Workflow permissions", select **"Read and write permissions"**
+   - Check **"Allow GitHub Actions to create and approve pull requests"**
+   - Click **Save**
+
+2. **The workflow already includes proper permissions**, so after updating the above settings, retry the deployment:
+   - Go to Actions tab
+   - Click the failed workflow
+   - Click **"Re-run failed jobs"**
+
+If the error persists, you may need to:
+- Ensure you're not using branch protection rules that prevent Actions
+- Check that your repository is public (GitHub Actions has more limitations on private repos without Actions credit)
+
 ### Changes Not Appearing
 
 1. Ensure you pushed to the `master` branch (workflow only deploys on master pushes)
