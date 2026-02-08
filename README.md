@@ -1,2 +1,3 @@
-# ai-patterns
+# AI Patterns
+
 The current patterns I use for delivering software with agents

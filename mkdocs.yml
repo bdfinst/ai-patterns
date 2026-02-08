@@ -1,0 +1,35 @@
+site_name: AI Patterns
+site_description: Patterns for delivering software with AI agents
+site_author: Bryan Finster
+site_url: https://bryanfinster.github.io/ai-patterns/
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.details
+  - pymdownx.tabbed
+  - attr_list
+
+nav:
+  - Home: index.md
+  - Automated Code Review: agentic-code-review.md
