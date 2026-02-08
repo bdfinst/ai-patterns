@@ -32,5 +32,4 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Setup: setup.md
-  - Automated Code Review: agentic-code-review.md
+  - Agentic Code Review Guide: agentic-code-review.md
