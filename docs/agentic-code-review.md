@@ -308,5 +308,3 @@ automation and that list is much shorter than it was.
 2. Add one agent, tuned to your codebase's patterns
 3. Measure and adjust before adding more agents
 4. Expand agent coverage based on where review feedback clusters
-
-test
