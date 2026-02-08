@@ -28,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css?v=20260208182018">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css?v=20260208182559">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css?v=20260208182018">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css?v=20260208182559">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-      <link rel="stylesheet" href="../css/timestamps.css?v=20260208182018">
+      <link rel="stylesheet" href="../css/timestamps.css?v=20260208182559">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -619,7 +619,7 @@ concerns have already been handled. Be aware that I am accountable to my AI spen
 this and will run this when I integrate to the trunk.</p>
 <h2 id="a-two-phase-review-architecture">A Two-Phase Review Architecture</h2>
 <p>This process separates concerns into what machines do well deterministically (Phase 1) and what requires contextual reasoning (Phase 2), with a feedback loop that allows automated correction before human review.</p>
-<div class="mermaid">flowchart TD
+<pre class="mermaid"><code>flowchart TD
     subgraph Review["Automated Review Process"]
         A[Review Triggered] --&gt; B{Phase 1: Deterministic Checks}
 
@@ -678,7 +678,7 @@ this and will run this when I integrate to the trunk.</p>
     Y --&gt; AB[Ready for Human Review]
     AB --&gt; AC{Human Review}
     AC --&gt;|Approved| AD[Merge]
-    AC --&gt;|Changes Requested| A</div>
+    AC --&gt;|Changes Requested| A</code></pre>
 <h2 id="phase-1-deterministic-checks">Phase 1: Deterministic Checks</h2>
 <p>These run first because they're fast, cheap, and have no false positives when configured correctly. No point wasting agent compute on code that won't compile.</p>
 <ul>
@@ -885,11 +885,9 @@ automation and that list is much shorter than it was.</p>
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.cd18aaf1.min.js?v=20260208182018"></script>
+      <script src="../assets/javascripts/bundle.cd18aaf1.min.js?v=20260208182559"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js?v=20260208182018"></script>
-      
-        <script src="../js/mermaid-init.js?v=20260208182018"></script>
+        <script src="../js/mermaid-init.js?v=20260208182559"></script>
       
     
   </body>
