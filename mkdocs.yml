@@ -17,6 +17,12 @@ theme:
       primary: indigo
       accent: indigo
 
+extra_css:
+  - css/timestamps.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
+
 plugins:
   - search
   - git-revision-date

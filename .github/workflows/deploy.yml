@@ -1,4 +1,4 @@
-name: Validate Docs Build
+name: Build and Deploy Docs
 
 on:
   push:
@@ -24,3 +24,13 @@ jobs:
 
       - name: Build docs
         run: mkdocs build
+
+      - name: Cache bust assets
+        run: python scripts/cache_bust.py site
+
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site

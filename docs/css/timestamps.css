@@ -1,0 +1,26 @@
+/* Reposition timestamp to appear under page heading */
+.md-content__inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.md-content__inner > h1 {
+  order: 1;
+}
+
+.md-content__inner > .md-source-file {
+  order: 2;
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.md-source-file {
+  font-size: 0.85rem !important;
+}
+
+.md-source-file small {
+  color: var(--md-default-fg-color--light) !important;
+  font-style: italic;
+}
