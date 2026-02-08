@@ -1,29 +1,49 @@
-// Initialize Mermaid when available
+// Initialize Mermaid diagrams
+console.log('Mermaid init script loaded');
+
 function initMermaid() {
-  if (typeof mermaid !== 'undefined') {
-    console.log('Initializing Mermaid...');
-    try {
-      mermaid.contentLoaded();
-      mermaid.run();
-      console.log('Mermaid initialized successfully');
-    } catch (e) {
-      console.error('Mermaid initialization error:', e);
-    }
-  } else {
-    console.warn('Mermaid library not loaded yet, retrying...');
+  console.log('Checking for mermaid library...');
+
+  if (typeof mermaid === 'undefined') {
+    console.warn('Mermaid library not found, will retry');
     setTimeout(initMermaid, 500);
+    return;
+  }
+
+  console.log('Mermaid library found, version:', mermaid.version);
+
+  try {
+    // Initialize mermaid
+    mermaid.initialize({ startOnLoad: true });
+    mermaid.contentLoaded();
+
+    // Find and render diagrams
+    const diagrams = document.querySelectorAll('.mermaid');
+    console.log('Found', diagrams.length, 'mermaid diagram(s)');
+
+    if (diagrams.length > 0) {
+      mermaid.run();
+      console.log('✓ Mermaid diagrams rendered successfully');
+    }
+  } catch (e) {
+    console.error('✗ Error rendering mermaid diagrams:', e);
   }
 }
 
-// Initialize on DOM ready
+// Wait for DOM to be ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initMermaid);
+  console.log('DOM loading, waiting for DOMContentLoaded...');
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOMContentLoaded fired');
+    setTimeout(initMermaid, 100);
+  });
 } else {
-  initMermaid();
+  console.log('DOM already loaded');
+  setTimeout(initMermaid, 100);
 }
 
-// Re-run on page updates (for navigation.instant feature)
+// Re-run on dynamic page updates (Material theme navigation.instant)
 document.addEventListener('page:load', function() {
-  console.log('Page loaded, reinitializing Mermaid...');
+  console.log('Page:load event fired, re-rendering mermaid...');
   initMermaid();
 });
