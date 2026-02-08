@@ -1,15 +1,15 @@
 /* Reposition timestamp to appear under page heading */
-.md-content__inner {
-  display: flex;
-  flex-direction: column;
+article.md-content__inner {
+  display: flex !important;
+  flex-direction: column !important;
 }
 
-.md-content__inner > h1 {
-  order: 1;
+article.md-content__inner > h1 {
+  order: 1 !important;
 }
 
-.md-content__inner > .md-source-file {
-  order: 2;
+article.md-content__inner > .md-source-file {
+  order: 2 !important;
   margin-top: 0.5rem !important;
   margin-bottom: 1.5rem !important;
   padding: 0 !important;
@@ -18,9 +18,11 @@
 
 .md-source-file {
   font-size: 0.85rem !important;
+  display: block !important;
 }
 
 .md-source-file small {
   color: var(--md-default-fg-color--light) !important;
-  font-style: italic;
+  font-style: italic !important;
+  display: block !important;
 }
