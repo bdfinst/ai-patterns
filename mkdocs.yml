@@ -1,7 +1,7 @@
 site_name: AI Patterns
 site_description: Patterns for delivering software with AI agents
 site_author: Bryan Finster
-site_url: https://bryanfinster.github.io/ai-patterns/
+site_url: https://bdfinst.github.io/ai-patterns/
 
 theme:
   name: material
