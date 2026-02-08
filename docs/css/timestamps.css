@@ -4,16 +4,23 @@ article.md-content__inner {
   flex-direction: column !important;
 }
 
+/* Heading first */
 article.md-content__inner > h1 {
-  order: 1 !important;
+  order: -2 !important;
 }
 
+/* Timestamp right after heading */
 article.md-content__inner > .md-source-file {
-  order: 2 !important;
-  margin-top: 0.5rem !important;
+  order: -1 !important;
+  margin-top: 0 !important;
   margin-bottom: 1.5rem !important;
   padding: 0 !important;
   border: none !important;
+}
+
+/* Hide the hr that separates content from timestamp */
+article.md-content__inner > hr:last-of-type {
+  display: none !important;
 }
 
 .md-source-file {
