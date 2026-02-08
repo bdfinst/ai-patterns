@@ -20,9 +20,6 @@ theme:
 extra_css:
   - css/timestamps.css
 
-extra_javascript:
-  - js/mermaid-init.js
-
 plugins:
   - search
   - git-revision-date
