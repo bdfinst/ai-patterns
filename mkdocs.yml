@@ -19,13 +19,14 @@ theme:
 
 plugins:
   - search
+  - git-revision-date
 
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_div_format
+          format: !!python/object:pymdownx.superfences.fence_div_format
   - pymdownx.details
   - pymdownx.tabbed
   - attr_list
