@@ -1,40 +1,35 @@
-// Material theme compatible mermaid initialization
-// Uses document$ observable to work with navigation.instant
-document.addEventListener('DOMContentLoaded', function() {
-  // Load mermaid dynamically
-  var script = document.createElement('script');
-  script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
-  script.onload = function() {
-    mermaid.initialize({ startOnLoad: false });
-    renderMermaid();
-  };
-  document.head.appendChild(script);
-});
+// Load mermaid library dynamically
+// Script runs at end of body, DOM is already parsed
+var mermaidScript = document.createElement('script');
+mermaidScript.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+mermaidScript.onload = function() {
+  mermaid.initialize({ startOnLoad: false });
+  renderMermaid();
+};
+document.head.appendChild(mermaidScript);
 
 function renderMermaid() {
+  // Convert <pre class="mermaid"><code>...</code></pre> to <div class="mermaid">...</div>
   var elements = document.querySelectorAll('pre.mermaid code');
   if (elements.length === 0) return;
 
-  elements.forEach(function(el, i) {
-    var parent = el.parentElement;
-    var container = document.createElement('div');
-    container.className = 'mermaid';
-    container.textContent = el.textContent;
-    parent.parentElement.replaceChild(container, parent);
+  elements.forEach(function(el) {
+    var pre = el.parentElement;
+    var div = document.createElement('div');
+    div.className = 'mermaid';
+    div.textContent = el.textContent;
+    pre.parentElement.replaceChild(div, pre);
   });
 
   mermaid.run();
 }
 
-// Handle Material theme instant navigation
+// Re-render on Material theme instant navigation
 var defined = false;
-var observer = new MutationObserver(function() {
-  if (typeof mermaid !== 'undefined' && !defined) {
-    defined = true;
-  }
-  if (defined) {
-    renderMermaid();
-  }
+var observer = new MutationObserver(function(mutations) {
+  if (typeof mermaid === 'undefined') return;
+  // Only act if new pre.mermaid elements appear
+  var found = document.querySelector('pre.mermaid code');
+  if (found) renderMermaid();
 });
-
 observer.observe(document.body, { childList: true, subtree: true });
