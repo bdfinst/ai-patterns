@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://bryanfinster.github.io/ai-patterns/</loc>
+         <loc>https://bdfinst.github.io/ai-patterns/</loc>
          <lastmod>2026-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bryanfinster.github.io/ai-patterns/agentic-code-review/</loc>
+         <loc>https://bdfinst.github.io/ai-patterns/agentic-code-review/</loc>
          <lastmod>2026-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
