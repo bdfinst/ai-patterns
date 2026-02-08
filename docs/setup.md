@@ -18,25 +18,21 @@ This guide walks you through configuring GitHub Pages to deploy your AI Patterns
 In the **Pages** settings:
 
 1. Under **"Build and deployment"** section:
-   - **Source**: Select **Deploy from a branch** (this is the default)
-   - **Branch**: Select **gh-pages** from the dropdown
-   - **Folder**: Keep as **/ (root)** (the default)
+   - **Source**: Select **Deploy from a branch**
+   - **Branch**: Select **master**
+   - **Folder**: Select **/docs** (important!)
 
 2. Click **Save**
 
-### Why gh-pages?
+### How It Works
 
-The GitHub Actions workflow automatically pushes built content to the `gh-pages` branch. This separates your source code (master branch) from your deployed site (gh-pages branch).
+Your documentation source files (markdown) live in the `docs/` folder on the master branch. GitHub Pages directly serves these files as your website. No separate branch needed!
 
-## Step 3: Wait for Deployment
+## Step 3: Your Site is Live
 
-1. Go to the **Actions** tab in your repository
-2. You should see a workflow run:
-   - First run: "Deploy to GitHub Pages"
-   - It will build your docs and deploy them
-   - Look for a ✓ (check mark) to indicate success
+GitHub Pages automatically deploys your site! That's it. No deployment step needed.
 
-The deployment typically takes 1-2 minutes.
+The site is served directly from the `/docs` folder in your master branch.
 
 ## Step 4: Access Your Site
 
@@ -68,42 +64,21 @@ If you want to use a custom domain:
 
 ### Site Not Showing Up
 
-- **Check Actions workflow**: Go to Actions tab → ensure "Deploy to GitHub Pages" ran successfully
-- **Wait longer**: GitHub Pages can take 2-3 minutes to become available
+- **Check Pages settings**: Go to Settings → Pages → Verify source is set to "master" and folder is "/docs"
+- **Wait a moment**: GitHub Pages can take a minute to become available after configuration
 - **Clear cache**: Try accessing in an incognito/private browser window
-- **Verify branch**: Ensure gh-pages branch exists in your repository
+- **Verify docs folder exists**: Ensure the `docs/` folder exists at the repository root with markdown files
 
-### Build Errors
+### GitHub Actions Validation
 
-If the Actions workflow fails:
+The repository includes a GitHub Actions workflow that validates the documentation builds correctly:
 
-1. Click the failed workflow run
-2. Scroll down to see the error output
-3. Common issues:
-   - Missing dependencies: Check `requirements.txt` contains all needed packages
-   - YAML syntax errors: Verify `.github/workflows/deploy.yml` formatting
-   - Python version issues: Workflow uses Python 3.11
+- Runs on every push to master and pull requests
+- Installs MkDocs and dependencies
+- Attempts to build the site (validates configuration)
+- Does NOT deploy (deployment is handled by GitHub Pages directly from the docs/ folder)
 
-### Permission Denied Error (403)
-
-If you see: `remote: Permission to <user>/<repo>.git denied to github-actions[bot]`
-
-**Solution:**
-
-1. **Check repository settings:**
-   - Go to Settings → Actions → General
-   - Under "Workflow permissions", select **"Read and write permissions"**
-   - Check **"Allow GitHub Actions to create and approve pull requests"**
-   - Click **Save**
-
-2. **The workflow already includes proper permissions**, so after updating the above settings, retry the deployment:
-   - Go to Actions tab
-   - Click the failed workflow
-   - Click **"Re-run failed jobs"**
-
-If the error persists, you may need to:
-- Ensure you're not using branch protection rules that prevent Actions
-- Check that your repository is public (GitHub Actions has more limitations on private repos without Actions credit)
+If the workflow fails, you'll see a ✗ on your commit. Check the Actions tab for details on build errors (usually YAML syntax or missing dependencies).
 
 ### Changes Not Appearing
 
@@ -112,16 +87,16 @@ If the error persists, you may need to:
 3. Hard refresh your browser (Ctrl+Shift+R or Cmd+Shift+R)
 4. Check that changes are in the `docs/` folder (not just at repo root)
 
-## Automatic Deployments
+## How Deployment Works
 
-Once enabled, the workflow automatically:
+Once you configure Pages settings:
 
-✓ Runs when you push to `master`
-✓ Builds your documentation with MkDocs
-✓ Deploys to GitHub Pages (gh-pages branch)
-✓ Takes 1-2 minutes from push to live site
+✓ Push markdown files to `master` branch in `/docs` folder
+✓ GitHub Pages automatically serves files from `/docs`
+✓ Site updates instantly when you push (no build step needed!)
+✓ GitHub Actions validates the build (optional - for checking configs)
 
-No manual deployment steps needed!
+No manual deployment steps needed! GitHub Pages directly serves your markdown files.
 
 ## Updating Documentation
 

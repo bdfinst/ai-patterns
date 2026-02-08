@@ -37,11 +37,11 @@ Then visit `http://localhost:8000/ai-patterns/`
 2. Update `mkdocs.yml` to add it to the navigation
 3. Push to `master` - site automatically rebuilds!
 
-## 🚀 Automatic Deployment
+## 🚀 Instant Deployment
 
-The GitHub Actions workflow (`.github/workflows/deploy.yml`) automatically:
-- Builds documentation when you push to `master`
-- Deploys to GitHub Pages (gh-pages branch)
-- Takes 1-2 minutes from push to live
+Once GitHub Pages is enabled:
+- Push markdown files to `master` branch in `/docs` folder
+- GitHub Pages automatically serves them - updates instantly!
+- GitHub Actions validates the build configuration (optional)
 
-No manual deployment needed!
+No build or deployment step needed!
