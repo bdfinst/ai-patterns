@@ -1,5 +1,7 @@
 # Automated Code Review with AI Agents Reference Architecture
 
+<small>v1.0</small>
+
 A hybrid approach combining deterministic rules-based tooling with context-aware AI agents to automate everything that
 can be automated about code review.
 

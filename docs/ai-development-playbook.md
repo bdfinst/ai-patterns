@@ -1,5 +1,7 @@
 # Leading an Agentic Development Team
 
+<small>v1.0</small>
+
 I was convinced AI coding tools were garbage. A few years ago, when people started saying "we don't need developers anymore," I set out to prove them wrong. I asked ChatGPT to build a simple REST service. It generated code with dependencies that didn't exist. You could search the entire internet and not find them. It confidently handed me fictional libraries. Complete garbage.
 
 So I shelved it. Every time someone told me they were "coding professionally" with AI, I thought they were insane. I even started writing a blog post to demonstrate how terrible these tools were.
