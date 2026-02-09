@@ -1,6 +1,6 @@
 # Leading an Agentic Development Team
 
-<small>v1.0</small>
+<small>v1.1</small>
 
 I was convinced AI coding tools were garbage. A few years ago, when people started saying "we don't need developers anymore," I set out to prove them wrong. I asked ChatGPT to build a simple REST service. It generated code with dependencies that didn't exist. You could search the entire internet and not find them. It confidently handed me fictional libraries. Complete garbage.
 
@@ -111,6 +111,14 @@ tests prove the code does what it should, the architecture agents confirm the st
 analysis passes, what exactly am I looking for by reading the code?
 
 [You can find my reference review architecture here.](https://bdfinst.github.io/ai-patterns/agentic-code-review/)
+
+### Post-Delivery Review for Critical Components
+
+Senior engineers often review critical code after it's been delivered. This doesn't disrupt the flow of delivery or increase batch size risk—the feature is already in production, getting real feedback. These reviews focus on identifying opportunities for improvement in components that matter most: security-sensitive code, high-traffic paths, or foundational abstractions that many other features depend on.
+
+This is different from pre-merge code review as a gate. A gate forces batching. Post-delivery review is continuous improvement. The code shipped on time with automated quality checks. The senior review happens afterward to find optimizations, security hardening, or architectural improvements that weren't obvious during initial development. It's learning applied to code that's already delivering value.
+
+These reviews often reveal patterns that should be captured in your review agents or added to your static analysis rules. When you find the same issue twice, automate the check. The goal isn't to create a second gate—it's to continuously improve your automated quality system so it catches more over time.
 
 ## The Leadership Lesson
 
