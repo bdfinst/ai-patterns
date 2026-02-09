@@ -24,14 +24,14 @@
     
     
       
-        <title>AI Development Playbook (v1.0) - AI Patterns</title>
+        <title>AI Development Playbook (v1.1) - AI Patterns</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css?v=20260209161144">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css?v=20260209171652">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css?v=20260209161144">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css?v=20260209171652">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-      <link rel="stylesheet" href="../css/timestamps.css?v=20260209161144">
+      <link rel="stylesheet" href="../css/timestamps.css?v=20260209171652">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AI Development Playbook (v1.0)
+              AI Development Playbook (v1.1)
             
           </span>
         </div>
@@ -316,7 +316,7 @@
           
   
   <span class="md-ellipsis">
-    AI Development Playbook (v1.0)
+    AI Development Playbook (v1.1)
   </span>
   
 
@@ -327,7 +327,7 @@
         
   
   <span class="md-ellipsis">
-    AI Development Playbook (v1.0)
+    AI Development Playbook (v1.1)
   </span>
   
 
@@ -407,6 +407,15 @@
   <a href="#validate-outcomes-not-activity" class="md-nav__link">
     <span class="md-ellipsis">
       Validate Outcomes, Not Activity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-delivery-review-for-critical-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Post-Delivery Review for Critical Components
     </span>
   </a>
   
@@ -553,7 +562,7 @@
 
 
 <h1 id="leading-an-agentic-development-team">Leading an Agentic Development Team</h1>
-<p><small>v1.0</small></p>
+<p><small>v1.1</small></p>
 <p>I was convinced AI coding tools were garbage. A few years ago, when people started saying "we don't need developers anymore," I set out to prove them wrong. I asked ChatGPT to build a simple REST service. It generated code with dependencies that didn't exist. You could search the entire internet and not find them. It confidently handed me fictional libraries. Complete garbage.</p>
 <p>So I shelved it. Every time someone told me they were "coding professionally" with AI, I thought they were insane. I even started writing a blog post to demonstrate how terrible these tools were.</p>
 <p>I had to trash the blog post.</p>
@@ -630,6 +639,10 @@ bottleneck that manual QA gates create: it feels like quality, but it slows feed
 tests prove the code does what it should, the architecture agents confirm the structure is clean, and the static
 analysis passes, what exactly am I looking for by reading the code?</p>
 <p><a href="https://bdfinst.github.io/ai-patterns/agentic-code-review/">You can find my reference review architecture here.</a></p>
+<h3 id="post-delivery-review-for-critical-components">Post-Delivery Review for Critical Components</h3>
+<p>Senior engineers often review critical code after it's been delivered. This doesn't disrupt the flow of delivery or increase batch size risk—the feature is already in production, getting real feedback. These reviews focus on identifying opportunities for improvement in components that matter most: security-sensitive code, high-traffic paths, or foundational abstractions that many other features depend on.</p>
+<p>This is different from pre-merge code review as a gate. A gate forces batching. Post-delivery review is continuous improvement. The code shipped on time with automated quality checks. The senior review happens afterward to find optimizations, security hardening, or architectural improvements that weren't obvious during initial development. It's learning applied to code that's already delivering value.</p>
+<p>These reviews often reveal patterns that should be captured in your review agents or added to your static analysis rules. When you find the same issue twice, automate the check. The goal isn't to create a second gate—it's to continuously improve your automated quality system so it catches more over time.</p>
 <h2 id="the-leadership-lesson">The Leadership Lesson</h2>
 <p>This workflow takes maybe 20 to 30 minutes of planning for any normal-sized feature. Then I go drink coffee while the
 team builds and keep an eye on how things are going to see if I need to tweak an agent or the information. Things that would have taken me days or weeks now finish in minutes or hours. After 30 years of doing this
@@ -705,7 +718,7 @@ haven't. The acceleration is real.</p>
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.cd18aaf1.min.js?v=20260209161144"></script>
+      <script src="../assets/javascripts/bundle.cd18aaf1.min.js?v=20260209171652"></script>
       
     
   </body>
