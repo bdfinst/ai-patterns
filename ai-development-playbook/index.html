@@ -1,0 +1,577 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Patterns for delivering software with AI agents">
+      
+      
+        <meta name="author" content="Bryan Finster">
+      
+      
+        <link rel="canonical" href="https://bdfinst.github.io/ai-patterns/ai-development-playbook/">
+      
+      
+        <link rel="prev" href="../agentic-code-review/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
+    
+    
+      
+        <title>AI Development Playbook - AI Patterns</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css?v=20260209154121">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css?v=20260209154121">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/timestamps.css?v=20260209154121">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#leading-an-agentic-development-team" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Patterns" class="md-header__button md-logo" aria-label="AI Patterns" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Patterns
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI Development Playbook
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Patterns" class="md-nav__button md-logo" aria-label="AI Patterns" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    AI Patterns
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentic-code-review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agentic Code Review Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    AI Development Playbook
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    AI Development Playbook
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#youve-led-teams-before" class="md-nav__link">
+    <span class="md-ellipsis">
+      You've Led Teams Before
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-your-agentic-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building Your Agentic Team
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building Your Agentic Team">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-the-mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set the Mission
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-done-before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define "Done" Before You Start
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-focused-specialists-with-an-orchestrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build Focused Specialists with an Orchestrator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#let-the-team-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Let the Team Work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validate-outcomes-not-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validate Outcomes, Not Activity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-leadership-lesson" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Leadership Lesson
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="leading-an-agentic-development-team">Leading an Agentic Development Team</h1>
+<p>I was convinced AI coding tools were garbage. A few years ago, when people started saying "we don't need developers anymore," I set out to prove them wrong. I asked ChatGPT to build a simple REST service. It generated code with dependencies that didn't exist. You could search the entire internet and not find them. It confidently handed me fictional libraries. Complete garbage.</p>
+<p>So I shelved it. Every time someone told me they were "coding professionally" with AI, I thought they were insane. I even started writing a blog post to demonstrate how terrible these tools were.</p>
+<p>I had to trash the blog post.</p>
+<p>I went back to generate code as evidence for my argument and discovered the models had improved in six months. Then I
+saw that people I deeply respected, Patrick Dubois and John Willis, both foundational members of the DevOps movement, were
+experimenting with AI. Patrick coined the word DevOps. John helped coin CALMS. Both have deep development and
+operational experience. These aren't hype-chasers. I joined one of their
+hackathons, used languages I'd never touched before on problems I didn't have a clue how to solve before, but I had a
+clear vision of the goal I wanted to achieve. I used help from ChatGPT to finish a working RAG application with open source models in a few hours that responded
+to questions about <a href="https://minimumcd.org">MinimumCD.org</a> with answers, not just copied text. That
+was the turning point.</p>
+<h2 id="youve-led-teams-before">You've Led Teams Before</h2>
+<p>When I started using AI agents for real work, I ran into the same problems I see people complain about today. I spent
+most of my time correcting the code. "No, do it this way. No, not like that either." Endless back and forth, burning
+time instead of saving it. I'd get frustrated and just code it myself. However, I knew I needed to figure this out, so I
+kept at it.</p>
+<p>Then I realized I'd been here before. Not with AI. With people. I'd seen this exact dynamic on every development team I
+worked on that lacked engineering discipline. Teams that started coding before they understood what they were building,
+skipped tests, spent weeks debugging, and confused activity with progress. The problem wasn't the developers. The
+problem was that nobody made sure the team had the right information at the right time and had the workflow to get
+feedback and self-correct.</p>
+<p>The same thing was happening with my agents. I was handing them vague instructions or telling them HOW to build
+something and getting frustrated with the results. Same dysfunction, different team. The fix was the same fix it's always been: make sure the team has what it needs to succeed. Clear goals. Business context. Quality processes that catch problems before the problems can be created, and then keep hardening those validations. AI didn't change the fundamentals of leading a development team. It amplified them.</p>
+<h2 id="building-your-agentic-team">Building Your Agentic Team</h2>
+<p>Here's how I lead my agentic development team today. If you've ever been on a good human team, this will feel familiar.</p>
+<h3 id="set-the-mission">Set the Mission</h3>
+<p>On the best teams I've been part of, we all understood the reasons behind the feature, not just the tasks assigned to
+us. I make it my job to ensure that context is available. On a human team, I'll create a flow diagram of the business process, walk
+through the user's problem, share why this feature matters. A team that has the right business and technical information
+asks the right questions and makes the right decisions without anyone standing over them.</p>
+<p>I use the same mindset with agents. Start with three to five sentences describing the feature and its goals. Not how to build it. What it should accomplish and why. Then tell the agent: "Here's what we're building. Plan the approach and ask me any clarifying questions." Let it generate a plan. Give feedback. Iterate until the plan makes sense. This takes maybe ten minutes and saves hours of rework.</p>
+<p>This is where most people fail. They skip the mission briefing and jump straight to "write me a function that does X." The agent needs a broad enough understanding of the feature's goals to make architectural decisions. If you scope the task to a single function, it has no context for where that function fits, how it relates to the rest of the system, or how the pieces should be organized. It will produce something that works in isolation and creates a mess in context.</p>
+<p>When the agent understands the full scope of what you're trying to accomplish, it architects the solution. It decomposes the problem sensibly, puts boundaries in the right places, and designs components that interact cleanly. The AI is trained on good patterns. You don't have to remember them all and feed them in. You just have to give it enough context to apply them.</p>
+<h3 id="define-done-before-you-start">Define "Done" Before You Start</h3>
+<p>For each item in the plan, generate Gherkin feature files with test scenarios. Review them carefully. The AI will sometimes generate scenarios that are good ideas in general but wrong for your specific context. I've had it produce intense security test scenarios for a desktop tool I was building for myself. That's over-engineering. Cut what doesn't belong.</p>
+<p>This is acceptance-test-driven development, not classic TDD. The distinction matters when you're working with agents. Classic TDD operates at the unit level: write a failing test for a small piece of logic, make it pass, refactor. That's a powerful discipline for a human developer building up a solution incrementally with fast feedback on every decision. But when you hand that workflow to an agent, you're micromanaging at the wrong level. You're telling it to think one function at a time, which means it never sees the bigger picture and can't make architectural decisions.</p>
+<p>ATDD works at the scenario level. You define a behavior the system should exhibit from the user's perspective, write a failing acceptance test for that scenario, make it pass, then refactor. One scenario at a time. The failing test proves you're testing something real. Making it pass proves the code works. Refactoring keeps the codebase clean before you move to the next scenario. The agent has enough scope to decide how to structure the code, which components to create, and how they should interact, because it's solving for a meaningful outcome instead of an isolated unit. Unit tests still get written along the way, but the agent generates them as part of making the scenario pass, not as the primary driver.</p>
+<p>On a good team, nobody starts coding until everyone agrees on what success looks like. Same principle applies here.</p>
+<h3 id="build-focused-specialists-with-an-orchestrator">Build Focused Specialists with an Orchestrator</h3>
+<p>On a good human team, you have generalists with overlapping, complementary specialist skills. Everyone contributes
+broadly, but each person also brings depth in specific areas. With agents, you take that principle and sharpen it:
+create focused specialist agents for specific quality checks. A narrow focus with an optimized context window produces more
+accurate results. When you stuff an agent's context with everything in the repository and ask it to "check quality," you
+get vague, generic feedback. It's the same thing that happens when you tell a human team member to "just make it good."
+When you give an agent a specific job and only the information relevant to that job, it catches things a human reviewer
+would miss. This is the same principle behind Unix pipelines: small, sharp tools composed together beat one monolithic
+tool every time.</p>
+<p>An orchestrating agent with the overall feature context coordinates the work, the same way a team lead who understands the full picture makes sure the specialists are pulling in the same direction.</p>
+<p>Set up focused agents for the different aspects of quality:</p>
+<ul>
+<li>A test review agent that validates tests are well-written and declarative</li>
+<li>An architecture agent that checks for clean, modular structure</li>
+<li>A domain agent that validates proper design patterns</li>
+<li>A naming agent that ensures names are meaningful throughout the application</li>
+</ul>
+<p>"Why do names matter if AI generates the code?" Because names provide context for every agent that touches the code going forward. Meaningless names mean agents misuse things, regenerate things unnecessarily, and lose track of what's what. Names are more important now than they were before, not less. Clear communication between team members prevents compounding mistakes, whether those team members are human or not.</p>
+<p>I still use static analysis tools and unit testing for everything that's rule-based. Agents handle the things that take judgment.</p>
+<h3 id="let-the-team-work">Let the Team Work</h3>
+<p>Define your coding agent to use acceptance-test-driven development. Take the first scenario from the first feature.
+Write the test. Make it pass. Never skip a test. Never alter a test to make things pass. After writing each test, have
+the test review agent check it for completeness and make sure it describes what should happen, not how it should happen.
+Brittle tests that break when implementation changes are worse than no tests. So, have a test review agent review the
+tests for implementation coupling and edge case completeness.</p>
+<p>Don't tell the agent how to write the code. Tell it what the code should do. You wouldn't dictate every keystroke to a teammate. You'd share the context, define the acceptance criteria, and trust them to deliver, then review the work together. Same approach here.</p>
+<p>I use adversarial cross-checking across the team. The coding agent writes, the test review agent validates the tests, the architecture agent validates the structure. They build guardrails and controls, just like I would for a human team. The difference is I can automate the controls that used to require manual review.</p>
+<h3 id="validate-outcomes-not-activity">Validate Outcomes, Not Activity</h3>
+<p>Once a feature is done, I validate whether it does what I intended it to do. If there's a mismatch between what I wanted and what I told the team, I fix my instructions, not the code. Then the team adjusts and we try again. The miscommunication was mine. I gave bad information.</p>
+<p>After that, I run the pre-commit checks. All the static analysis, all the CI tests, all the review agents run and verify everything passes. Rules-based checks handle rules. Judgment-based agents handle judgment.</p>
+<p>After I build my automated quality process, I don't look at the code anymore. I can't. It's dangerous. That sounds
+radical, but think about what happens when I do. If I manually review every line, I become the constraint. Everything
+waits on me. That means batching up more work before each review, which means larger deliveries, which means more risk
+that we're building the wrong thing even if we're building it the right way. Manual code review recreates the same
+bottleneck that manual QA gates create: it feels like quality, but it slows feedback and increases batch size. If the
+tests prove the code does what it should, the architecture agents confirm the structure is clean, and the static
+analysis passes, what exactly am I looking for by reading the code?</p>
+<p><a href="https://bdfinst.github.io/ai-patterns/agentic-code-review/">You can find my reference review architecture here.</a></p>
+<h2 id="the-leadership-lesson">The Leadership Lesson</h2>
+<p>This workflow takes maybe 20 to 30 minutes of planning for any normal-sized feature. Then I go drink coffee while the
+team builds and keep an eye on how things are going to see if I need to tweak an agent or the information. Things that would have taken me days or weeks now finish in minutes or hours. After 30 years of doing this
+job, I have a reliable baseline for how long things take, both for work I've done before and for research into things I
+haven't. The acceleration is real.</p>
+<p>But here's what nobody wants to hear: AI is a high-pass filter for your leadership and engineering discipline. If you have the discipline of continuous delivery, of test-driven development, of defining what you're building before you build it, an agentic team gives you a dramatic improvement. If you don't have that discipline, you'll struggle. You'll generate garbage faster and spend all your time cleaning it up.</p>
+<p>The developers who complain that AI produces bad code are often the same developers who think testing comes later or that coding is the work. They never decompose work into testable outcomes before starting. They never define a pipeline to validate changes. They never build a system of quality checks, never execute a CI workflow with small, focused tasks that build to the goal. They jump into the code and write a feature. Their workflow also includes constant rework that they don't notice because it's been normalized. When they apply that workflow to agents, they get a mirror of their work methods.</p>
+<h2 id="getting-started">Getting Started</h2>
+<ol>
+<li><strong>Set the mission.</strong> Three to five sentences. What you're building and why, not how.</li>
+<li><strong>Plan with the team.</strong> Have the agent generate a plan. Give it feedback. Agree on the approach.</li>
+<li><strong>Define "done" first.</strong> Gherkin features. Prune anything that doesn't belong.</li>
+<li><strong>Build focused specialists with an orchestrator.</strong> Review agents for tests, architecture, naming, domain patterns, coordinated by an agent with overall context.</li>
+<li><strong>Let the team code.</strong> Define what the code should do and let them deliver it.</li>
+<li><strong>Validate outcomes, not activity.</strong> If the tests pass and the architecture is clean, ship it.</li>
+<li><strong>Run your pipeline.</strong> Pre-commit checks, all agents, all analysis. Every time.</li>
+</ol>
+<p>Leading an agentic team takes the same skills as leading any development team: ensuring the right information flows at the right time, both business context and technical context. Define the mission. Share the "why." Build quality processes. The difference is that those skills now pay compound interest. If you don't have them yet, that's the first thing to learn. Not prompt engineering. Not which model is best. Learn how to make sure a team has what it needs to deliver. The agents are ready when you are.</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2026-02-09
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.cd18aaf1.min.js?v=20260209154121"></script>
+      
+    
+  </body>
+</html>
