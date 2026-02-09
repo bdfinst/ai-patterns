@@ -37,3 +37,4 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Agentic Code Review Guide: agentic-code-review.md
+  - AI Development Playbook: ai-development-playbook.md
