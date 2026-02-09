@@ -2,7 +2,7 @@
 
 The current patterns I'm using and hardening for delivering enterprise software with AI agents.
 
-**[→ View on GitHub](https://github.com/bryanfinster/ai-patterns)**
+**[→ View on GitHub](https://github.com/bdfinst/ai-patterns)**
 
 ## Guides
 

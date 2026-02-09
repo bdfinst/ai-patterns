@@ -19,7 +19,7 @@ The flowchart under "A Two-Phase Review Architecture" should render with boxes a
 If mermaid isn't rendering on the deployed site, follow these steps:
 
 ### 1. Check Browser Console for Errors
-- Visit: https://bryanfinster.github.io/ai-patterns/agentic-code-review/
+- Visit: https://bdfinst.github.io/ai-patterns/agentic-code-review/
 - Open DevTools: Press `F12` or Right-click → Inspect
 - Go to **Console** tab
 - Look for any red error messages
