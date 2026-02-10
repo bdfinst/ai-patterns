@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://bdfinst.github.io/ai-patterns/</loc>
-         <lastmod>2026-02-09</lastmod>
+         <lastmod>2026-02-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bdfinst.github.io/ai-patterns/agentic-code-review/</loc>
-         <lastmod>2026-02-09</lastmod>
+         <lastmod>2026-02-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bdfinst.github.io/ai-patterns/ai-development-playbook/</loc>
-         <lastmod>2026-02-09</lastmod>
+         <lastmod>2026-02-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
