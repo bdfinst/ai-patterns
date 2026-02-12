@@ -1,0 +1,57 @@
+/* Custom layout adjustments for wider content area */
+
+/* Widen the main content container to 90% of screen width */
+.md-grid {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ensure the main content area uses the available width */
+.md-main__inner {
+    max-width: none;
+}
+
+/* Adjust the content container */
+.md-content {
+    max-width: none;
+}
+
+/* For pages with tables, ensure they can use the full width */
+.md-content__inner {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ensure tables can expand to full width when needed */
+.md-typeset table:not([class]) {
+    display: table;
+    width: 100%;
+}
+
+/* Adjust sidebar width proportionally if present */
+@media screen and (min-width: 76.25em) {
+    .md-sidebar--primary {
+        width: 12rem;
+    }
+
+    .md-sidebar--secondary {
+        width: 12rem;
+    }
+}
+
+/* Ensure proper spacing on smaller screens */
+@media screen and (max-width: 76.1875em) {
+    .md-grid {
+        max-width: 95%;
+    }
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 60em) {
+    .md-grid {
+        max-width: 100%;
+        padding: 0 0.8rem;
+    }
+}
