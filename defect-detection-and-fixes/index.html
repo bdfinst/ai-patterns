@@ -30,10 +30,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css?v=20260212144126">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css?v=20260212150257">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css?v=20260212144126">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css?v=20260212150257">
       
       
 
@@ -52,15 +52,15 @@
       
     
     
-      <link rel="stylesheet" href="../css/layout.css?v=20260212144126">
+      <link rel="stylesheet" href="../css/layout.css?v=20260212150257">
     
-      <link rel="stylesheet" href="../css/timestamps.css?v=20260212144126">
+      <link rel="stylesheet" href="../css/timestamps.css?v=20260212150257">
     
-      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css?v=20260212144126">
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css?v=20260212150257">
     
-      <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css?v=20260212144126">
+      <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css?v=20260212150257">
     
-      <link rel="stylesheet" href="../css/datatables-custom.css?v=20260212144126">
+      <link rel="stylesheet" href="../css/datatables-custom.css?v=20260212150257">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -501,9 +501,9 @@
 <th style="text-align: left;">Category</th>
 <th style="text-align: left;">Defect Cause</th>
 <th style="text-align: left;">Earliest Detection</th>
-<th style="text-align: left;">Automated Detection</th>
-<th style="text-align: left;">Where AI Adds Value</th>
-<th style="text-align: left;">Use Traditional Tooling</th>
+<th style="text-align: left;">Auto Detection</th>
+<th style="text-align: left;">Detection Method</th>
+<th style="text-align: left;">AI Improvement</th>
 <th style="text-align: left;">Systemic Correction</th>
 </tr>
 </thead>
@@ -512,297 +512,297 @@
 <td style="text-align: left;">Product &amp; Discovery</td>
 <td style="text-align: left;">Building the wrong thing</td>
 <td style="text-align: left;">Discovery</td>
-<td style="text-align: left;">Feature adoption tracking; alert on &lt;X% usage after N days; funnel drop-off analysis</td>
-<td style="text-align: left;">Synthesize user feedback; support tickets; and usage data to surface misalignment signals at volume</td>
-<td style="text-align: left;">Adoption dashboards and funnel analytics (Amplitude; Mixpanel) — straightforward metric tracking</td>
+<td style="text-align: left;">Production</td>
+<td style="text-align: left;">Adoption dashboards (Amplitude; Mixpanel); funnel drop-off alerts; usage thresholds on &lt;X% adoption after N days</td>
+<td style="text-align: left;">Synthesize user feedback; support tickets; and usage data to surface misalignment signals earlier than production metrics</td>
 <td style="text-align: left;">Validated user research before backlog entry; dual-track agile; kill features that miss adoption thresholds</td>
 </tr>
 <tr>
 <td style="text-align: left;">Product &amp; Discovery</td>
 <td style="text-align: left;">Solving a problem nobody has</td>
 <td style="text-align: left;">Discovery</td>
-<td style="text-align: left;">Support ticket topic clustering vs. feature investment; automated survey correlation with releases</td>
+<td style="text-align: left;">Production</td>
+<td style="text-align: left;">Ticket topic clustering vs. feature investment; survey correlation with releases; feature request tracking</td>
 <td style="text-align: left;">Semantic analysis of interview transcripts; forums; and tickets to identify actual vs. assumed pain</td>
-<td style="text-align: left;">Ticket counts; feature request votes; search volume — counting problems for helpdesk/analytics tools</td>
 <td style="text-align: left;">Problem validation as a stage gate; publish problem brief before solution brief; quantify user pain</td>
 </tr>
 <tr>
 <td style="text-align: left;">Product &amp; Discovery</td>
 <td style="text-align: left;">Correct problem; wrong solution</td>
 <td style="text-align: left;">Discovery</td>
-<td style="text-align: left;">A/B test significance; feature flag cohort comparison; task completion rate tracking</td>
+<td style="text-align: left;">Production</td>
+<td style="text-align: left;">A/B testing frameworks; feature flag cohort comparison; statistical significance calculators; task completion tracking</td>
 <td style="text-align: left;">Evaluate prototypes against problem definitions; generate alternative solution approaches</td>
-<td style="text-align: left;">A/B frameworks; statistical significance calculators — let the math do the math</td>
 <td style="text-align: left;">Prototype multiple approaches; measurable success criteria before building; experiment with flags first</td>
 </tr>
 <tr>
 <td style="text-align: left;">Product &amp; Discovery</td>
 <td style="text-align: left;">Meets spec but misses user intent</td>
 <td style="text-align: left;">Requirements</td>
-<td style="text-align: left;">Rage-click and error-loop detection (FullStory; Hotjar); task completion rate vs. feature presence</td>
+<td style="text-align: left;">Production</td>
+<td style="text-align: left;">UX analytics (FullStory; Hotjar); rage-click and error-loop detection; task completion rate tracking</td>
 <td style="text-align: left;">Review acceptance criteria for missing user outcomes; analyze session replays at scale for frustration patterns</td>
-<td style="text-align: left;">UX analytics tools handle rage-click detection and session replay — solved pattern-matching</td>
 <td style="text-align: left;">Acceptance criteria as user outcomes; not functional checklists; regular usability testing cadence</td>
 </tr>
 <tr>
 <td style="text-align: left;">Product &amp; Discovery</td>
 <td style="text-align: left;">Over-engineering beyond need</td>
 <td style="text-align: left;">Design</td>
-<td style="text-align: left;">Lead time per unit of value; LOC per feature; static analysis for unused abstractions and dead code</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Static analysis for dead code and unused abstractions (SonarQube; ESLint); complexity scoring; LOC per feature</td>
 <td style="text-align: left;">Flag unnecessary abstraction layers; premature optimization; and complexity vs. actual requirements in code review</td>
-<td style="text-align: left;">Dead code detection; complexity scoring (SonarQube; ESLint) — deterministic static analysis</td>
 <td style="text-align: left;">YAGNI as team norm; time-box spikes; justify every abstraction layer; review architecture vs. actual scale quarterly</td>
 </tr>
 <tr>
 <td style="text-align: left;">Product &amp; Discovery</td>
 <td style="text-align: left;">Prioritizing wrong work</td>
 <td style="text-align: left;">Discovery</td>
-<td style="text-align: left;">DORA metrics correlated with business outcomes; cost of delay dashboards; investment vs. outcome tracking</td>
+<td style="text-align: left;">Production</td>
+<td style="text-align: left;">DORA metrics vs. business outcomes; WSJF scoring; cost of delay dashboards; capacity vs. outcome tracking</td>
 <td style="text-align: left;">Synthesize roadmap; customer data; and market signals to surface opportunity cost</td>
-<td style="text-align: left;">WSJF scoring; capacity planning — spreadsheet problems needing accurate inputs; not AI</td>
 <td style="text-align: left;">WSJF for prioritization; regular portfolio reviews with outcome data; publish what you chose NOT to do</td>
 </tr>
 <tr>
 <td style="text-align: left;">Integration &amp; Boundaries</td>
 <td style="text-align: left;">Interface mismatches</td>
 <td style="text-align: left;">CI</td>
-<td style="text-align: left;">Consumer-driven contract tests (Pact); schema validation (OpenAPI; protobuf/buf linting); API compat checks per PR</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Consumer-driven contract tests (Pact); schema validation (OpenAPI; protobuf/buf); API compat checks per PR</td>
 <td style="text-align: left;">Predict which consumers break from API changes based on usage patterns when formal contracts don't exist</td>
-<td style="text-align: left;">Contract tests; schema validation; compatibility checks — must be deterministic; not probabilistic</td>
 <td style="text-align: left;">Contract tests mandatory per boundary; API-first with generated clients; version + migration plan before merge</td>
 </tr>
 <tr>
 <td style="text-align: left;">Integration &amp; Boundaries</td>
 <td style="text-align: left;">Wrong assumptions about upstream/downstream</td>
 <td style="text-align: left;">Design</td>
-<td style="text-align: left;">Chaos engineering (Gremlin; Litmus); synthetic transactions across boundaries; unexpected response alerting</td>
+<td style="text-align: left;">Staging</td>
+<td style="text-align: left;">Chaos engineering (Gremlin; Litmus); synthetic transactions; fault injection; circuit breaker monitoring</td>
 <td style="text-align: left;">Review code/docs to identify undocumented behavioral assumptions (timeouts; retries; error semantics)</td>
-<td style="text-align: left;">Fault injection; circuit breaker monitoring; synthetic checks — must be deterministic and repeatable</td>
 <td style="text-align: left;">Document behavioral contracts; not just schemas; defensive coding at boundaries; circuit breakers as default</td>
 </tr>
 <tr>
 <td style="text-align: left;">Integration &amp; Boundaries</td>
 <td style="text-align: left;">Race conditions</td>
 <td style="text-align: left;">Pre-Commit</td>
-<td style="text-align: left;">Thread sanitizers (TSan); load testing with concurrency; fuzz testing; anomaly detection for intermittent failures</td>
-<td style="text-align: left;">Limited — can flag concurrency anti-patterns in PR review; but cannot replace formal detection tools</td>
-<td style="text-align: left;">TSan; race detectors; TLA+; fuzz testing — purpose-built formal tools. This is a tooling problem; not a judgment problem</td>
+<td style="text-align: left;">Pre-Commit</td>
+<td style="text-align: left;">Thread sanitizers (TSan); race detectors; TLA+; fuzz testing; load testing with concurrency</td>
+<td style="text-align: left;">Limited — can flag concurrency anti-patterns in review but cannot replace formal detection tools</td>
 <td style="text-align: left;">Design for idempotency; queues over shared mutable state; lock ordering conventions; concurrency review checklist</td>
 </tr>
 <tr>
 <td style="text-align: left;">Integration &amp; Boundaries</td>
 <td style="text-align: left;">Inconsistent distributed state</td>
 <td style="text-align: left;">Design</td>
-<td style="text-align: left;">Reconciliation jobs; distributed tracing with anomaly detection; saga completion monitoring</td>
-<td style="text-align: left;">Review designs for missing compensation logic or consistency model mismatches — useful at design time</td>
-<td style="text-align: left;">Tracing (Jaeger/Zipkin); reconciliation; saga monitoring — continuous operational tools; deterministic</td>
+<td style="text-align: left;">Staging</td>
+<td style="text-align: left;">Distributed tracing (Jaeger/Zipkin); reconciliation jobs; saga completion monitoring; anomaly detection</td>
+<td style="text-align: left;">Review designs for missing compensation logic or consistency model mismatches</td>
 <td style="text-align: left;">Choose consistency model deliberately per use case; saga with compensating transactions; event sourcing</td>
 </tr>
 <tr>
 <td style="text-align: left;">Knowledge &amp; Communication</td>
 <td style="text-align: left;">Implicit domain knowledge not in code</td>
 <td style="text-align: left;">Coding</td>
-<td style="text-align: left;">Magic number detection in static analysis; git knowledge-concentration metrics; onboarding time tracking</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Magic number detection; git knowledge-concentration metrics (CodeScene; git-fame); onboarding time tracking</td>
 <td style="text-align: left;">HIGH VALUE: Identify undocumented business rules; missing 'why' in code; and knowledge gaps a new dev would hit</td>
-<td style="text-align: left;">Git history analysis; code ownership metrics (CodeScene; git-fame) — counting/graphing problems</td>
 <td style="text-align: left;">DDD with ubiquitous language; embed rules in code not wikis; pair across experience levels; rotate ownership</td>
 </tr>
 <tr>
 <td style="text-align: left;">Knowledge &amp; Communication</td>
 <td style="text-align: left;">Ambiguous requirements</td>
 <td style="text-align: left;">Requirements</td>
+<td style="text-align: left;">CI</td>
 <td style="text-align: left;">Flag stories without acceptance criteria; BDD spec coverage tracking; defect classification for 'requirements gap'</td>
-<td style="text-align: left;">HIGH VALUE: Review requirements for ambiguity; missing edge cases; contradictions; and unstated assumptions; generate test scenarios</td>
-<td style="text-align: left;">BDD coverage reports; story tracking; defect tagging — workflow tools (Jira; ADO) handle categorization</td>
+<td style="text-align: left;">HIGH VALUE: Review requirements for ambiguity; missing edge cases; contradictions; generate test scenarios from specs</td>
 <td style="text-align: left;">Three Amigos before work starts; example mapping; executable specs as source of truth; given/when/then required</td>
 </tr>
 <tr>
 <td style="text-align: left;">Knowledge &amp; Communication</td>
 <td style="text-align: left;">Tribal knowledge loss</td>
 <td style="text-align: left;">Coding</td>
-<td style="text-align: left;">Bus factor from git history; single-author concentration alerts; documentation freshness checks</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Bus factor from git history (CodeScene; git-fame); single-author concentration alerts; doc freshness checks</td>
 <td style="text-align: left;">Generate documentation from code/tests; flag where docs have drifted from implementation</td>
-<td style="text-align: left;">Git analysis; bus factor scoring; last-modified checks — existing analysis tools handle this</td>
 <td style="text-align: left;">Pair/mob programming as default; rotate on-call; automate tribal knowledge; living docs from code</td>
 </tr>
 <tr>
 <td style="text-align: left;">Knowledge &amp; Communication</td>
 <td style="text-align: left;">Divergent mental models across teams</td>
 <td style="text-align: left;">Design</td>
-<td style="text-align: left;">Cross-team integration defect tracking; divergent naming detection across codebases; contract test failures</td>
-<td style="text-align: left;">HIGH VALUE: Compare terminology and domain models across team codebases to detect semantic mismatches before integration failures</td>
-<td style="text-align: left;">Integration defect counts; contract failure rates — lagging indicators for dashboards</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Divergent naming detection across codebases; contract test failures; integration defect tracking</td>
+<td style="text-align: left;">HIGH VALUE: Compare terminology and domain models across codebases to detect semantic mismatches</td>
 <td style="text-align: left;">Shared domain model; explicit bounded contexts; regular cross-team syncs; shared glossary enforced via linting</td>
 </tr>
 <tr>
 <td style="text-align: left;">Change &amp; Complexity</td>
 <td style="text-align: left;">Unintended side effects</td>
 <td style="text-align: left;">CI</td>
+<td style="text-align: left;">CI</td>
 <td style="text-align: left;">Automated test suites; mutation testing (Stryker; PIT); change impact analysis flagging downstream consumers</td>
-<td style="text-align: left;">Reason about semantic change impact beyond syntactic dependencies — 'this looks isolated but affects X because Y'</td>
-<td style="text-align: left;">Test execution; coverage; mutation scoring — deterministic; must remain so</td>
+<td style="text-align: left;">Reason about semantic change impact beyond syntactic dependencies</td>
 <td style="text-align: left;">Small focused commits; trunk-based development; feature flags to decouple deploy from release</td>
 </tr>
 <tr>
 <td style="text-align: left;">Change &amp; Complexity</td>
 <td style="text-align: left;">Accumulated technical debt</td>
 <td style="text-align: left;">CI</td>
-<td style="text-align: left;">Complexity trends over time; duplication scoring; dependency cycles; TODO/HACK counts; SonarQube quality gates</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Complexity trends; duplication scoring; dependency cycles; SonarQube quality gates; TODO/HACK counts</td>
 <td style="text-align: left;">Identify architectural drift; abstraction decay; and calcified workarounds that static analysis misses</td>
-<td style="text-align: left;">Cyclomatic complexity; duplication; dependency cycles — measurement problems solved by static analysis</td>
 <td style="text-align: left;">Refactoring as part of every story; dedicated debt budget; boy scout rule; treat rising complexity as leading indicator</td>
 </tr>
 <tr>
 <td style="text-align: left;">Change &amp; Complexity</td>
 <td style="text-align: left;">Unanticipated feature interactions</td>
 <td style="text-align: left;">Staging</td>
-<td style="text-align: left;">Combinatorial/pairwise testing; feature flag interaction matrix; anomaly detection post-release; regression suites</td>
-<td style="text-align: left;">Reason about feature interactions semantically; flagging conflicts that testing matrices might miss</td>
-<td style="text-align: left;">Pairwise testing tools; flag management (LaunchDarkly); canary with auto-rollback — execution/infrastructure problems</td>
+<td style="text-align: left;">Staging</td>
+<td style="text-align: left;">Combinatorial/pairwise testing; feature flag interaction matrix (LaunchDarkly); canary with auto-rollback; regression suites</td>
+<td style="text-align: left;">Reason about feature interactions semantically; flag conflicts that testing matrices miss</td>
 <td style="text-align: left;">Feature flags with controlled rollout; modular design; canary deployments with auto-rollback on anomaly</td>
 </tr>
 <tr>
 <td style="text-align: left;">Change &amp; Complexity</td>
 <td style="text-align: left;">Configuration drift</td>
 <td style="text-align: left;">CI</td>
+<td style="text-align: left;">CI</td>
 <td style="text-align: left;">IaC drift detection (Terraform plan; Pulumi preview; AWS Config); environment comparison; smoke tests per environment</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">Drift detection and environment comparison are deterministic comparison problems — fully solved by existing tooling</td>
+<td style="text-align: left;">Not needed</td>
 <td style="text-align: left;">All infrastructure as code; immutable infrastructure; GitOps; identical provisioning from same source</td>
 </tr>
 <tr>
 <td style="text-align: left;">Testing &amp; Observability Gaps</td>
 <td style="text-align: left;">Untested edge cases and error paths</td>
 <td style="text-align: left;">CI</td>
-<td style="text-align: left;">Mutation testing; branch coverage with thresholds; property-based testing (Hypothesis; fast-check)</td>
-<td style="text-align: left;">Analyze code paths and generate test cases for untested boundaries and error paths humans overlook</td>
-<td style="text-align: left;">Mutation testing; coverage measurement; property-based frameworks — deterministic execution engines</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Mutation testing (Stryker; PIT); branch coverage thresholds; property-based testing (Hypothesis; fast-check)</td>
+<td style="text-align: left;">Analyze code paths; generate tests for untested boundaries and error paths humans overlook</td>
 <td style="text-align: left;">Tests required for every bug fix; property-based testing as standard; boundary value analysis; mutation scores as gate</td>
 </tr>
 <tr>
 <td style="text-align: left;">Testing &amp; Observability Gaps</td>
 <td style="text-align: left;">Missing contract tests at boundaries</td>
 <td style="text-align: left;">CI</td>
-<td style="text-align: left;">Boundary inventory vs. contract test inventory; CI fails if new endpoint lacks tests; untested dependency graph edges</td>
-<td style="text-align: left;">Identify boundaries lacking tests by understanding semantic service relationships beyond network connections</td>
-<td style="text-align: left;">Boundary inventory; CI config checks; Pact broker — binary question: 'does this boundary have a test?'</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Boundary inventory vs. contract test inventory; CI fails if new endpoint lacks tests; Pact broker</td>
+<td style="text-align: left;">Identify boundaries lacking tests by understanding semantic service relationships</td>
 <td style="text-align: left;">Contract tests mandatory per new boundary; type varies by control level (see Contract Testing Strategies tab)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Testing &amp; Observability Gaps</td>
 <td style="text-align: left;">Insufficient monitoring</td>
 <td style="text-align: left;">Design</td>
-<td style="text-align: left;">Observability coverage scoring; checks for missing health endpoints; structured logging; trace propagation; SLO burn rates</td>
-<td style="text-align: left;">Review architectures and flag observability gaps against production readiness checklists automatically</td>
-<td style="text-align: left;">Observability platforms (Datadog; Grafana; New Relic); SLO alerting — continuous operational tools</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Observability coverage scoring; health endpoint checks; structured logging verification; SLO burn rate alerting</td>
+<td style="text-align: left;">Review architectures; flag observability gaps against production readiness checklists</td>
 <td style="text-align: left;">Observability as NFR on every service; production readiness checklist enforced; SLOs for every user-facing path</td>
 </tr>
 <tr>
 <td style="text-align: left;">Testing &amp; Observability Gaps</td>
 <td style="text-align: left;">Test environments don't reflect production</td>
 <td style="text-align: left;">CI</td>
-<td style="text-align: left;">Automated environment parity checks; synthetic transaction comparison across environments; infra diff tools</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">Environment parity is a deterministic comparison problem — IaC diff tools and config comparison handle this</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Automated environment parity checks; synthetic transaction comparison; IaC diff tools; config comparison</td>
+<td style="text-align: left;">Not needed</td>
 <td style="text-align: left;">Same provisioning for all environments; production-like data in staging; containerization; test in prod with flags</td>
 </tr>
 <tr>
 <td style="text-align: left;">Process &amp; Deployment</td>
 <td style="text-align: left;">Long-lived branches</td>
 <td style="text-align: left;">Pre-Commit</td>
-<td style="text-align: left;">Branch age alerts; merge conflict frequency; CI dashboard showing branch count and divergence</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">Branch age and conflict frequency are counting problems — git hooks and CI config handle enforcement</td>
+<td style="text-align: left;">Pre-Commit</td>
+<td style="text-align: left;">Branch age alerts; merge conflict frequency; CI dashboard for branch count and divergence</td>
+<td style="text-align: left;">Not needed</td>
 <td style="text-align: left;">Trunk-based development; merge at least daily; CI rejects stale branches; feature flags eliminate branch need</td>
 </tr>
 <tr>
 <td style="text-align: left;">Process &amp; Deployment</td>
 <td style="text-align: left;">Manual pipeline steps</td>
 <td style="text-align: left;">CI</td>
-<td style="text-align: left;">Pipeline audit for manual gates; deployment lead time (manual steps = wait time); pipeline topology analysis</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">Pipeline topology is inspectable without judgment — CI/CD platform analytics show manual steps deterministically</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Pipeline audit for manual gates; deployment lead time analysis; pipeline topology analysis</td>
+<td style="text-align: left;">Not needed</td>
 <td style="text-align: left;">Automate every step commit-to-production; manual approvals only for regulatory; treat pipeline as first-class product</td>
 </tr>
 <tr>
 <td style="text-align: left;">Process &amp; Deployment</td>
 <td style="text-align: left;">Batching too many changes per release</td>
 <td style="text-align: left;">CI</td>
-<td style="text-align: left;">Changes-per-deploy metrics; deployment frequency (DORA); alerts when batch size exceeds threshold</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">Batch size is a counting problem — Sleuth; LinearB; DORA dashboards handle this</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Changes-per-deploy metrics; deployment frequency (DORA); batch size threshold alerts</td>
+<td style="text-align: left;">Not needed</td>
 <td style="text-align: left;">Continuous delivery — every commit is a candidate; single-piece flow; decouple deploy from release with flags</td>
 </tr>
 <tr>
 <td style="text-align: left;">Process &amp; Deployment</td>
 <td style="text-align: left;">Inadequate rollback capability</td>
 <td style="text-align: left;">CI</td>
+<td style="text-align: left;">CI</td>
 <td style="text-align: left;">Automated rollback testing in CI; mean time to rollback; migration reversibility checks</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">Rollback capability is testable deterministically — infrastructure verification; health check automation</td>
+<td style="text-align: left;">Not needed</td>
 <td style="text-align: left;">Blue/green or canary as default; backward-compatible migrations only; auto-rollback on health failure; practice regularly</td>
 </tr>
 <tr>
 <td style="text-align: left;">Data &amp; State</td>
 <td style="text-align: left;">Schema migration / backward compat failures</td>
 <td style="text-align: left;">CI</td>
+<td style="text-align: left;">CI</td>
 <td style="text-align: left;">Schema compatibility checks (Avro; protobuf/buf); migration dry-runs against production-like data</td>
 <td style="text-align: left;">Predict downstream impact by understanding how consumers actually use data beyond formal compatibility</td>
-<td style="text-align: left;">Schema compatibility modes; breaking change detection (buf) — deterministic; must remain so</td>
 <td style="text-align: left;">Expand-then-contract always; never deploy breaking schema changes; schema registry with compat enforcement</td>
 </tr>
 <tr>
 <td style="text-align: left;">Data &amp; State</td>
 <td style="text-align: left;">Null/missing data assumptions</td>
 <td style="text-align: left;">Pre-Commit</td>
-<td style="text-align: left;">Null safety static analysis (NullAway; TypeScript strict); automated null-input test generation; production NPE monitoring</td>
-<td style="text-align: left;">Flag code where optional fields are used without null checks; even in languages without strict null safety</td>
-<td style="text-align: left;">Null safety type systems (Kotlin; TypeScript strict; Rust); static analysis (NullAway) — use the type system first</td>
+<td style="text-align: left;">Pre-Commit</td>
+<td style="text-align: left;">Null safety static analysis (NullAway; TypeScript strict); null-input test generation; NPE monitoring</td>
+<td style="text-align: left;">Flag code where optional fields used without null checks; suggest fixes even in non-strict languages</td>
 <td style="text-align: left;">Enforce null-safe type systems; Option/Maybe as default; validate at boundaries; assert and handle explicitly</td>
 </tr>
 <tr>
 <td style="text-align: left;">Data &amp; State</td>
 <td style="text-align: left;">Concurrency and ordering issues</td>
 <td style="text-align: left;">CI</td>
-<td style="text-align: left;">Thread sanitizers; load tests with randomized timing; idempotency verification tests</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">TSan; race detectors; TLA+; model checkers — concurrency requires exhaustive exploration; not judgment</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Thread sanitizers (TSan); load tests with randomized timing; idempotency verification; model checkers (TLA+)</td>
+<td style="text-align: left;">Not needed</td>
 <td style="text-align: left;">Design for out-of-order delivery; idempotent consumers; version vectors on events; prefer immutable data</td>
 </tr>
 <tr>
 <td style="text-align: left;">Data &amp; State</td>
 <td style="text-align: left;">Cache invalidation errors</td>
 <td style="text-align: left;">Staging</td>
-<td style="text-align: left;">Cache consistency monitoring (cached vs. source); TTL verification; stale data detection; hit rate anomaly alerts</td>
-<td style="text-align: left;">Review cache invalidation logic for incomplete paths or TTL/change-frequency mismatches at design and code review time</td>
-<td style="text-align: left;">Consistency monitoring; TTL checks; hit rate alerting — operational monitoring handled by observability tools</td>
+<td style="text-align: left;">Staging</td>
+<td style="text-align: left;">Cache consistency monitoring; TTL verification; stale data detection; hit rate anomaly alerts</td>
+<td style="text-align: left;">Review cache invalidation logic for incomplete paths or TTL/change-frequency mismatches</td>
 <td style="text-align: left;">Short TTLs over complex invalidation; event-driven invalidation; cache-aside with explicit invalidation; alert on staleness</td>
 </tr>
 <tr>
 <td style="text-align: left;">Dependency &amp; Infrastructure</td>
 <td style="text-align: left;">Third-party library breaking changes</td>
 <td style="text-align: left;">CI</td>
-<td style="text-align: left;">Automated upgrade PRs (Dependabot; Renovate) with full test suite; SCA for breaking version bumps; lock file drift</td>
-<td style="text-align: left;">Review changelogs to assess breaking change risk and predict compatibility issues based on your actual API usage</td>
-<td style="text-align: left;">Dependabot; Renovate; SCA; lock file checks — automated dependency management with deterministic test gates</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Automated upgrade PRs (Dependabot; Renovate); SCA for breaking versions; lock file drift detection</td>
+<td style="text-align: left;">Review changelogs to assess breaking change risk; predict compatibility issues from actual usage</td>
 <td style="text-align: left;">Pin dependencies; automated upgrade PRs with test gates; abstract over volatile dependencies; evaluate stability before adoption</td>
 </tr>
 <tr>
 <td style="text-align: left;">Dependency &amp; Infrastructure</td>
 <td style="text-align: left;">Infrastructure differences across environments</td>
 <td style="text-align: left;">CI</td>
-<td style="text-align: left;">IaC drift detection; config comparison across environments; environment parity scoring</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">Drift detection; config comparison; container verification; GitOps reconciliation — deterministic; fully solved</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">IaC drift detection; config comparison across environments; environment parity scoring; GitOps reconciliation</td>
+<td style="text-align: left;">Not needed</td>
 <td style="text-align: left;">Single source of truth for all environments; immutable infrastructure; containerization; GitOps with promotion</td>
 </tr>
 <tr>
 <td style="text-align: left;">Dependency &amp; Infrastructure</td>
 <td style="text-align: left;">Network partitions / partial failures handled wrong</td>
 <td style="text-align: left;">Staging</td>
+<td style="text-align: left;">Staging</td>
 <td style="text-align: left;">Chaos engineering (Gremlin; Litmus); synthetic transaction monitoring; circuit breaker state monitoring</td>
-<td style="text-align: left;">Review architectures for missing failure patterns (no circuit breaker; no retry/backoff; no bulkhead) at design time</td>
-<td style="text-align: left;">Chaos tools; synthetic monitoring; circuit breaker dashboards — runtime tools; deterministic and repeatable</td>
+<td style="text-align: left;">Review architectures for missing failure patterns (no circuit breaker; no retry/backoff; no bulkhead)</td>
 <td style="text-align: left;">Design for failure as default; circuit breakers; retries; bulkheads; test failure modes explicitly; game days</td>
 </tr>
 </tbody>
@@ -864,25 +864,25 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.tracking", "navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.cd18aaf1.min.js?v=20260212144126"></script>
+      <script src="../assets/javascripts/bundle.cd18aaf1.min.js?v=20260212150257"></script>
       
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js?v=20260212144126"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js?v=20260212150257"></script>
       
-        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js?v=20260212144126"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js?v=20260212150257"></script>
       
-        <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js?v=20260212144126"></script>
+        <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js?v=20260212150257"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js?v=20260212144126"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js?v=20260212150257"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js?v=20260212144126"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js?v=20260212150257"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js?v=20260212144126"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js?v=20260212150257"></script>
       
-        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js?v=20260212144126"></script>
+        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js?v=20260212150257"></script>
       
-        <script src="../js/datatables-init.js?v=20260212144126"></script>
+        <script src="../js/datatables-init.js?v=20260212150257"></script>
       
-        <script src="../js/cache-bust.js?v=20260212144126"></script>
+        <script src="../js/cache-bust.js?v=20260212150257"></script>
       
     
   </body>
