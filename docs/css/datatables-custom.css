@@ -48,10 +48,16 @@ table.dataTable tbody td {
     max-width: 0; /* Enable text wrapping with fixed layout */
     font-size: 0.7rem; /* Match nav menu font size */
     line-height: 1.5; /* Maintain readability with proper line height */
+    border-bottom: 1px solid #ddd; /* Row separation */
 }
 
 table.dataTable tbody tr:hover {
     background-color: #f9f9f9;
+}
+
+/* Thick border between category groups */
+table.dataTable tbody tr.group-boundary td {
+    border-top: 3px solid #999;
 }
 
 /* Search box styling */

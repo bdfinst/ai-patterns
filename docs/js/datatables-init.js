@@ -70,6 +70,20 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     ])
                 });
+                // Add group boundary class where first column value changes
+                var rows = table.querySelectorAll('tbody tr');
+                var prevValue = '';
+                rows.forEach(function(row) {
+                    var firstCell = row.querySelector('td');
+                    if (firstCell) {
+                        var value = firstCell.textContent.trim();
+                        if (prevValue && value !== prevValue) {
+                            row.classList.add('group-boundary');
+                        }
+                        prevValue = value;
+                    }
+                });
+
             } catch (e) {
                 console.error('Error initializing DataTable for table ' + table.id + ':', e);
             }
