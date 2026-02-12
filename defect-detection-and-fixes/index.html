@@ -18,6 +18,8 @@
         <link rel="prev" href="../ai-development-playbook/">
       
       
+        <link rel="next" href="../contract-testing-strategies/">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
@@ -28,10 +30,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css?v=20260212140048">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css?v=20260212140221">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css?v=20260212140048">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css?v=20260212140221">
       
       
 
@@ -50,15 +52,15 @@
       
     
     
-      <link rel="stylesheet" href="../css/layout.css?v=20260212140048">
+      <link rel="stylesheet" href="../css/layout.css?v=20260212140221">
     
-      <link rel="stylesheet" href="../css/timestamps.css?v=20260212140048">
+      <link rel="stylesheet" href="../css/timestamps.css?v=20260212140221">
     
-      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css?v=20260212140048">
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css?v=20260212140221">
     
-      <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css?v=20260212140048">
+      <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css?v=20260212140221">
     
-      <link rel="stylesheet" href="../css/datatables-custom.css?v=20260212140048">
+      <link rel="stylesheet" href="../css/datatables-custom.css?v=20260212140221">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -362,6 +364,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contract-testing-strategies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contract Testing Strategies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -471,6 +494,7 @@
 
 
 <h1 id="defect-cause-catalog">Defect Cause Catalog</h1>
+<p>A comprehensive catalog of where defects are created in the value stream, methods for automated detection, and systemic remediation strategies.</p>
 <table>
 <thead>
 <tr>
@@ -783,145 +807,6 @@
 </tr>
 </tbody>
 </table>
-<h1 id="contract-testing-strategies">Contract Testing Strategies</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Control Level</th>
-<th style="text-align: left;">Approach</th>
-<th style="text-align: left;">How It Works</th>
-<th style="text-align: left;">Tools</th>
-<th style="text-align: left;">Automation Complexity</th>
-<th style="text-align: left;">Earliest Detection</th>
-<th style="text-align: left;">Where AI Adds Value</th>
-<th style="text-align: left;">Use Traditional Tooling</th>
-<th style="text-align: left;">Strengths</th>
-<th style="text-align: left;">Limitations</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Full Control (Own both sides)</td>
-<td style="text-align: left;">Consumer-Driven Contracts (CDC)</td>
-<td style="text-align: left;">Consumer defines contract (subset of provider API it uses). Provider verifies it satisfies all consumer contracts. Shared broker tracks compatibility.</td>
-<td style="text-align: left;">Pact (polyglot); Spring Cloud Contract (JVM); Pactflow (enterprise broker). Consumer publishes on build → Provider verifies on build.</td>
-<td style="text-align: left;">Low–Med</td>
-<td style="text-align: left;">CI</td>
-<td style="text-align: left;">Generate initial contracts by analyzing consumer code for actual provider endpoint/field usage</td>
-<td style="text-align: left;">Contract verification; broker management; compat matrix — deterministic execution</td>
-<td style="text-align: left;">Tests only what consumer needs; enables independent deploy; contracts are living coupling documentation</td>
-<td style="text-align: left;">Requires discipline to maintain; initial broker setup cost; versioning complex with many consumers</td>
-</tr>
-<tr>
-<td style="text-align: left;">Full Control (Own both sides)</td>
-<td style="text-align: left;">Bi-Directional Contracts</td>
-<td style="text-align: left;">Both sides independently generate API descriptions (consumer from mocks; provider from running API). Broker compares for compatibility.</td>
-<td style="text-align: left;">Pactflow bi-directional; Specmatic with OpenAPI. Consumer generates Pact from existing mocks → Provider generates spec → broker compares.</td>
-<td style="text-align: left;">Low</td>
-<td style="text-align: left;">CI</td>
-<td style="text-align: left;">Explain semantic differences beyond schema shape — 'same name; different meaning'</td>
-<td style="text-align: left;">Schema comparison and compatibility checking — deterministic diff tools</td>
-<td style="text-align: left;">Low adoption friction; teams keep existing mocking tools; fast to start</td>
-<td style="text-align: left;">Less precise than CDC; can miss semantic mismatches; requires both sides to keep specs accurate</td>
-</tr>
-<tr>
-<td style="text-align: left;">Full Control (Own both sides)</td>
-<td style="text-align: left;">Shared Schema/IDL Validation</td>
-<td style="text-align: left;">Single source of truth schema (protobuf; Avro; GraphQL SDL). Both sides compile against it. CI enforces backward compatibility. Code generation ensures type safety.</td>
-<td style="text-align: left;">protobuf + buf (lint + breaking change detection); Avro + Confluent Schema Registry; GraphQL schema registry.</td>
-<td style="text-align: left;">Low</td>
-<td style="text-align: left;">Pre-Commit</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">buf; Avro compat modes; protobuf checks — formal verification; must be provably correct</td>
-<td style="text-align: left;">Strongest shape guarantees; breaking changes caught at compile time; single source of truth</td>
-<td style="text-align: left;">Only validates shape; not behavior; requires all teams on same IDL; doesn't catch logic bugs</td>
-</tr>
-<tr>
-<td style="text-align: left;">Some Influence (Internal; not owned)</td>
-<td style="text-align: left;">Provider-Published Specs</td>
-<td style="text-align: left;">Provider publishes API contract (OpenAPI; AsyncAPI). Consumer validates usage against published spec. Provider commits to spec as stable interface.</td>
-<td style="text-align: left;">OpenAPI in shared registry; consumer validates via Specmatic; Prism; or Schemathesis against latest published spec.</td>
-<td style="text-align: left;">Low–Med</td>
-<td style="text-align: left;">CI</td>
-<td style="text-align: left;">Review provider specs against your actual usage to identify which changes matter to you</td>
-<td style="text-align: left;">Spec linting; schema validation; consumer test execution — deterministic</td>
-<td style="text-align: left;">Works without provider running your tests; fast feedback against real spec</td>
-<td style="text-align: left;">Provider may change spec without warning; trusting spec accuracy; one-directional</td>
-</tr>
-<tr>
-<td style="text-align: left;">Some Influence (Internal; not owned)</td>
-<td style="text-align: left;">API Snapshot / Record-Replay</td>
-<td style="text-align: left;">Record real API interactions from staging. Store as snapshots. Replay in CI to detect changes. Alert on divergence from baseline.</td>
-<td style="text-align: left;">Hoverfly; VCR; Polly.JS; WireMock recording; Karate for comparison. Periodic refresh → replay → alert on divergence.</td>
-<td style="text-align: left;">Medium</td>
-<td style="text-align: left;">CI</td>
-<td style="text-align: left;">Flag semantic changes (same shape; different meaning) that schema comparison misses; identify stale snapshots</td>
-<td style="text-align: left;">Recording; replay; comparison — deterministic mechanics (Hoverfly; VCR; WireMock)</td>
-<td style="text-align: left;">Captures actual behavior; not just docs; works without provider cooperation</td>
-<td style="text-align: left;">Snapshots go stale; staging may not match prod; brittle with dynamic content</td>
-</tr>
-<tr>
-<td style="text-align: left;">Some Influence (Internal; not owned)</td>
-<td style="text-align: left;">Negotiated SLAs + Integration Tests</td>
-<td style="text-align: left;">Negotiate lightweight SLA (response time; error rates; uptime; stable endpoints). Run integration tests in shared environment validating SLA. Both teams alerted on failure.</td>
-<td style="text-align: left;">Shared integration environment with synthetic transactions; PagerDuty/OpsGenie for SLA breach alerts. SLA doc in shared repo with quarterly review.</td>
-<td style="text-align: left;">Medium</td>
-<td style="text-align: left;">Staging</td>
-<td style="text-align: left;">Draft initial SLA proposals by analyzing actual service behavior and your usage patterns; review SLAs for ambiguity</td>
-<td style="text-align: left;">SLA monitoring; synthetic transactions; breach alerting — operational tools; deterministic</td>
-<td style="text-align: left;">Formalizes relationship; SLA breaches create shared accountability; catches performance issues</td>
-<td style="text-align: left;">Integration tests are slower/flakier; shared environments are fragile; only detects after deployment</td>
-</tr>
-<tr>
-<td style="text-align: left;">No Control (Third-party / SaaS)</td>
-<td style="text-align: left;">Consumer-Side Expectations</td>
-<td style="text-align: left;">Write tests defining exact subset of third-party API you depend on. Run against mocks in CI. Periodically verify against real API. Detect drift before production.</td>
-<td style="text-align: left;">Pact consumer-only; Specmatic with your own spec of their API; JSON Schema validation. CI against mocks → scheduled real-API verification → alert on divergence.</td>
-<td style="text-align: left;">Medium</td>
-<td style="text-align: left;">CI</td>
-<td style="text-align: left;">Generate expectations by analyzing codebase for every third-party API call and response dependency</td>
-<td style="text-align: left;">Running tests against mocks and scheduling real-API checks — test framework and cron job problems</td>
-<td style="text-align: left;">You own the definition; catches drift pre-production; mocks keep CI fast</td>
-<td style="text-align: left;">Your expectations may be wrong; lag before detecting changes; real-API runs can be rate-limited</td>
-</tr>
-<tr>
-<td style="text-align: left;">No Control (Third-party / SaaS)</td>
-<td style="text-align: left;">API Canary / Synthetic Monitoring</td>
-<td style="text-align: left;">Continuously run synthetic transactions against live third-party API. Monitor response shape; latency; error rates. Alert on deviation from baseline.</td>
-<td style="text-align: left;">Checkly; Datadog Synthetics; Grafana Synthetic Monitoring; CloudWatch Synthetics. Critical paths every 1–5 min → alert on deviation.</td>
-<td style="text-align: left;">Low–Med</td>
-<td style="text-align: left;">Production</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">Synthetic monitoring needs reliability and consistency; not intelligence — purpose-built tools</td>
-<td style="text-align: left;">Near-real-time detection; low setup for critical paths; monitors availability + correctness</td>
-<td style="text-align: left;">Only tests defined paths; rate limits; doesn't catch changes pre-deploy; smoke-test depth</td>
-</tr>
-<tr>
-<td style="text-align: left;">No Control (Third-party / SaaS)</td>
-<td style="text-align: left;">Anti-Corruption Layer + Boundary Tests</td>
-<td style="text-align: left;">Wrap third-party API in adapter translating their model to your domain. Test adapter extensively. External changes only require adapter updates — domain code insulated.</td>
-<td style="text-align: left;">Adapter pattern; unit/integration tests on adapter; Testcontainers or WireMock for simulation. Adapter tests in CI → scheduled verification against real API.</td>
-<td style="text-align: left;">Med–High</td>
-<td style="text-align: left;">CI</td>
-<td style="text-align: left;">Help design the adapter by analyzing third-party API surface and your domain model to suggest translation mapping</td>
-<td style="text-align: left;">Adapter unit tests; simulated API tests; CI execution — deterministic boundary testing</td>
-<td style="text-align: left;">Insulates codebase; change surface is one adapter; enables provider substitution; clean domain model</td>
-<td style="text-align: left;">Higher upfront cost; adapter can have bugs; still need canary for external change detection</td>
-</tr>
-<tr>
-<td style="text-align: left;">No Control (Third-party / SaaS)</td>
-<td style="text-align: left;">Vendor Changelog Monitoring</td>
-<td style="text-align: left;">Monitor vendor changelog; status page; and dev communications. Auto-trigger regression suite on detected changes. Combine with synthetic monitoring for unannounced changes.</td>
-<td style="text-align: left;">RSS/webhook monitoring on vendor pages; GitHub Actions triggered by changelog updates; targeted regression suite on affected areas.</td>
-<td style="text-align: left;">Med–High</td>
-<td style="text-align: left;">Post-Release</td>
-<td style="text-align: left;">HIGH VALUE: Parse vendor changelogs and release notes to assess impact on your integration — strong NLU use case</td>
-<td style="text-align: left;">Triggering regression suites from webhooks and running tests — automation/CI; not AI</td>
-<td style="text-align: left;">Proactive; combines vendor comms with verification; builds knowledge of vendor patterns</td>
-<td style="text-align: left;">Vendors don't always announce changes; changelog parsing brittle; high maintenance</td>
-</tr>
-</tbody>
-</table>
 
   <hr>
 <div class="md-source-file">
@@ -979,25 +864,25 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.tracking", "navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.cd18aaf1.min.js?v=20260212140048"></script>
+      <script src="../assets/javascripts/bundle.cd18aaf1.min.js?v=20260212140221"></script>
       
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js?v=20260212140048"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js?v=20260212140221"></script>
       
-        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js?v=20260212140048"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js?v=20260212140221"></script>
       
-        <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js?v=20260212140048"></script>
+        <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js?v=20260212140221"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js?v=20260212140048"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js?v=20260212140221"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js?v=20260212140048"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js?v=20260212140221"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js?v=20260212140048"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js?v=20260212140221"></script>
       
-        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js?v=20260212140048"></script>
+        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js?v=20260212140221"></script>
       
-        <script src="../js/datatables-init.js?v=20260212140048"></script>
+        <script src="../js/datatables-init.js?v=20260212140221"></script>
       
-        <script src="../js/cache-bust.js?v=20260212140048"></script>
+        <script src="../js/cache-bust.js?v=20260212140221"></script>
       
     
   </body>

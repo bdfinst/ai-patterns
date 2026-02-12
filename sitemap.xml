@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bdfinst.github.io/ai-patterns/contract-testing-strategies/</loc>
+         <lastmod>2026-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bdfinst.github.io/ai-patterns/defect-detection-and-fixes/</loc>
          <lastmod>2026-02-12</lastmod>
          <changefreq>daily</changefreq>
