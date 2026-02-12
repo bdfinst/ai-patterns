@@ -37,10 +37,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     order: [], // No default sorting
                     responsive: true,
                     autoWidth: false,
+                    scrollX: false, // Disable horizontal scrolling
                     columnDefs: [
                         {
                             targets: '_all',
-                            className: 'dt-body-left dt-head-left'
+                            className: 'dt-body-left dt-head-left',
+                            render: function(data, type, row) {
+                                // For display, allow text wrapping
+                                if (type === 'display' && data && data.length > 100) {
+                                    return '<div style="white-space: normal; word-wrap: break-word;">' + data + '</div>';
+                                }
+                                return data;
+                            }
                         }
                     ]
                 });

@@ -25,6 +25,7 @@
 table.dataTable {
     width: 100% !important;
     margin: 1em 0;
+    table-layout: fixed; /* Fixed layout for better column control */
 }
 
 table.dataTable thead th {
@@ -32,11 +33,17 @@ table.dataTable thead th {
     border-bottom: 2px solid #ddd;
     padding: 12px 8px;
     font-weight: 600;
+    white-space: normal; /* Allow header text to wrap */
+    word-wrap: break-word;
 }
 
 table.dataTable tbody td {
     padding: 10px 8px;
     vertical-align: top;
+    white-space: normal; /* Allow cell text to wrap */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 0; /* Enable text wrapping with fixed layout */
 }
 
 table.dataTable tbody tr:hover {
@@ -83,4 +90,24 @@ table.dataTable tbody tr:hover {
     border: 1px solid #ddd;
     border-radius: 4px;
     margin: 0 8px;
+}
+
+/* Prevent horizontal scrolling */
+.dataTables_wrapper {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Ensure table container doesn't overflow */
+.md-typeset table {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* Allow code/pre elements in tables to wrap */
+table.dataTable code,
+table.dataTable pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
