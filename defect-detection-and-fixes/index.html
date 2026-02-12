@@ -28,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css?v=20260212132555">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css?v=20260212135710">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css?v=20260212132555">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css?v=20260212135710">
       
       
 
@@ -50,7 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="../css/timestamps.css?v=20260212132555">
+      <link rel="stylesheet" href="../css/timestamps.css?v=20260212135710">
+    
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css?v=20260212135710">
+    
+      <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css?v=20260212135710">
+    
+      <link rel="stylesheet" href="../css/datatables-custom.css?v=20260212135710">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -466,244 +472,312 @@
 <table>
 <thead>
 <tr>
-<th>Category</th>
-<th>Defect Cause</th>
-<th>Earliest Detection Stage</th>
-<th>Automated Detection</th>
-<th>Systemic Correction</th>
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Defect Cause</th>
+<th style="text-align: left;">Earliest Detection</th>
+<th style="text-align: left;">Automated Detection</th>
+<th style="text-align: left;">Where AI Adds Value</th>
+<th style="text-align: left;">Use Traditional Tooling</th>
+<th style="text-align: left;">Systemic Correction</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Product &amp; Discovery</strong></td>
-<td><strong>Building the wrong thing entirely</strong></td>
-<td>Discovery — Before any code. Product analytics and user research during discovery phase.</td>
-<td>Track feature adoption rates post-release with product analytics (Amplitude, Mixpanel); alert when new features have &lt;X% usage after N days; automated funnel analysis showing drop-off</td>
-<td>Require validated user research before work enters the backlog; dual-track agile with discovery running ahead of delivery; kill features that don't hit adoption thresholds within a defined window</td>
+<td style="text-align: left;">Product &amp; Discovery</td>
+<td style="text-align: left;">Building the wrong thing</td>
+<td style="text-align: left;">Discovery</td>
+<td style="text-align: left;">Feature adoption tracking; alert on &lt;X% usage after N days; funnel drop-off analysis</td>
+<td style="text-align: left;">Synthesize user feedback; support tickets; and usage data to surface misalignment signals at volume</td>
+<td style="text-align: left;">Adoption dashboards and funnel analytics (Amplitude; Mixpanel) — straightforward metric tracking</td>
+<td style="text-align: left;">Validated user research before backlog entry; dual-track agile; kill features that miss adoption thresholds</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Solving a problem nobody has</strong></td>
-<td>Discovery — Before any code. Customer interviews and demand validation.</td>
-<td>Monitor support ticket topics vs. feature investment; automated gap analysis between user-reported pain and roadmap items; survey automation (NPS, CSAT) correlated with feature releases</td>
-<td>Mandate problem validation (interviews, data analysis) as a stage gate before solution design; publish a 'problem brief' before any 'solution brief'; connect roadmap items to quantified user pain</td>
+<td style="text-align: left;">Product &amp; Discovery</td>
+<td style="text-align: left;">Solving a problem nobody has</td>
+<td style="text-align: left;">Discovery</td>
+<td style="text-align: left;">Support ticket topic clustering vs. feature investment; automated survey correlation with releases</td>
+<td style="text-align: left;">Semantic analysis of interview transcripts; forums; and tickets to identify actual vs. assumed pain</td>
+<td style="text-align: left;">Ticket counts; feature request votes; search volume — counting problems for helpdesk/analytics tools</td>
+<td style="text-align: left;">Problem validation as a stage gate; publish problem brief before solution brief; quantify user pain</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Correct problem, wrong solution</strong></td>
-<td>Discovery — Before any code. Prototype testing during solution design.</td>
-<td>A/B test frameworks with automated significance calculation; feature flag analytics comparing cohorts; automated task-completion-rate tracking in usability tools</td>
-<td>Default to prototyping multiple approaches before committing; require measurable success criteria before building; run solution experiments with feature flags before full rollout</td>
+<td style="text-align: left;">Product &amp; Discovery</td>
+<td style="text-align: left;">Correct problem; wrong solution</td>
+<td style="text-align: left;">Discovery</td>
+<td style="text-align: left;">A/B test significance; feature flag cohort comparison; task completion rate tracking</td>
+<td style="text-align: left;">Evaluate prototypes against problem definitions; generate alternative solution approaches</td>
+<td style="text-align: left;">A/B frameworks; statistical significance calculators — let the math do the math</td>
+<td style="text-align: left;">Prototype multiple approaches; measurable success criteria before building; experiment with flags first</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Meets the spec but misses user intent</strong></td>
-<td>Requirements — During story writing. Acceptance criteria review with users.</td>
-<td>Session replay tools (FullStory, Hotjar) with automated rage-click and error-loop detection; track task completion rate, not just feature presence; automated UX heuristic scanning</td>
-<td>Write acceptance criteria as user outcomes, not functional checklists; include 'how will we know this works for users?' on every story; regular usability testing cadence, not just at launch</td>
+<td style="text-align: left;">Product &amp; Discovery</td>
+<td style="text-align: left;">Meets spec but misses user intent</td>
+<td style="text-align: left;">Requirements</td>
+<td style="text-align: left;">Rage-click and error-loop detection (FullStory; Hotjar); task completion rate vs. feature presence</td>
+<td style="text-align: left;">Review acceptance criteria for missing user outcomes; analyze session replays at scale for frustration patterns</td>
+<td style="text-align: left;">UX analytics tools handle rage-click detection and session replay — solved pattern-matching</td>
+<td style="text-align: left;">Acceptance criteria as user outcomes; not functional checklists; regular usability testing cadence</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Over-engineering beyond actual need</strong></td>
-<td>Design — During architecture/design. Review scope against actual requirements.</td>
-<td>Track lead time per story point or unit of value; measure lines of code per feature; static analysis for unused abstractions, dead code, and overly complex class hierarchies</td>
-<td>YAGNI as a team norm; time-box architecture spikes; require justification for every abstraction layer; review architecture against actual (not projected) scale requirements quarterly</td>
+<td style="text-align: left;">Product &amp; Discovery</td>
+<td style="text-align: left;">Over-engineering beyond need</td>
+<td style="text-align: left;">Design</td>
+<td style="text-align: left;">Lead time per unit of value; LOC per feature; static analysis for unused abstractions and dead code</td>
+<td style="text-align: left;">Flag unnecessary abstraction layers; premature optimization; and complexity vs. actual requirements in code review</td>
+<td style="text-align: left;">Dead code detection; complexity scoring (SonarQube; ESLint) — deterministic static analysis</td>
+<td style="text-align: left;">YAGNI as team norm; time-box spikes; justify every abstraction layer; review architecture vs. actual scale quarterly</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Prioritizing the wrong work (opportunity cost)</strong></td>
-<td>Discovery — During prioritization. Cost of delay analysis before work enters backlog.</td>
-<td>Automated DORA metrics (deployment frequency, lead time) correlated with business outcomes; track cost of delay; dashboard comparing investment allocation vs. outcome metrics</td>
-<td>Weighted shortest job first (WSJF) for prioritization; regular portfolio reviews with outcome data; make opportunity cost visible by publishing what you chose NOT to do and why</td>
+<td style="text-align: left;">Product &amp; Discovery</td>
+<td style="text-align: left;">Prioritizing wrong work</td>
+<td style="text-align: left;">Discovery</td>
+<td style="text-align: left;">DORA metrics correlated with business outcomes; cost of delay dashboards; investment vs. outcome tracking</td>
+<td style="text-align: left;">Synthesize roadmap; customer data; and market signals to surface opportunity cost</td>
+<td style="text-align: left;">WSJF scoring; capacity planning — spreadsheet problems needing accurate inputs; not AI</td>
+<td style="text-align: left;">WSJF for prioritization; regular portfolio reviews with outcome data; publish what you chose NOT to do</td>
 </tr>
 <tr>
-<td><strong>Integration &amp; Boundaries</strong></td>
-<td><strong>Service/component interface mismatches</strong></td>
-<td>CI Pipeline — On every PR/commit. Contract tests and schema validation in CI.</td>
-<td>Consumer-driven contract tests in CI (Pact, Spring Cloud Contract); schema validation in pipelines (OpenAPI, protobuf linting); automated API compatibility checks on every PR. Strategy varies by organizational control — see 'Contract Testing Strategies' tab for full breakdown by control level (full, some influence, none) with specific tools and automation complexity.</td>
-<td>Contract tests mandatory for every service boundary; API-first design with generated clients; breaking changes require versioning and migration plan. For services you own: consumer-driven contracts or bi-directional contracts via Pact/Pactflow. For internal services you don't own: provider-published specs with consumer validation, or API snapshot testing. For third-party APIs: anti-corruption layers with automated boundary tests and synthetic monitoring. See 'Contract Testing Strategies' tab for detailed guidance by control level.</td>
+<td style="text-align: left;">Integration &amp; Boundaries</td>
+<td style="text-align: left;">Interface mismatches</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Consumer-driven contract tests (Pact); schema validation (OpenAPI; protobuf/buf linting); API compat checks per PR</td>
+<td style="text-align: left;">Predict which consumers break from API changes based on usage patterns when formal contracts don't exist</td>
+<td style="text-align: left;">Contract tests; schema validation; compatibility checks — must be deterministic; not probabilistic</td>
+<td style="text-align: left;">Contract tests mandatory per boundary; API-first with generated clients; version + migration plan before merge</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Incorrect assumptions about upstream/downstream behavior</strong></td>
-<td>Design — During system design. Behavioral contract definition before coding.</td>
-<td>Chaos engineering (Gremlin, Litmus) injecting failures automatically; synthetic transaction monitoring across service boundaries; alerting on unexpected response codes/shapes</td>
-<td>Document behavioral contracts (timeouts, retries, error semantics), not just data schemas; defensive coding at every boundary; circuit breakers and fallback behaviors as defaults</td>
+<td style="text-align: left;">Integration &amp; Boundaries</td>
+<td style="text-align: left;">Wrong assumptions about upstream/downstream</td>
+<td style="text-align: left;">Design</td>
+<td style="text-align: left;">Chaos engineering (Gremlin; Litmus); synthetic transactions across boundaries; unexpected response alerting</td>
+<td style="text-align: left;">Review code/docs to identify undocumented behavioral assumptions (timeouts; retries; error semantics)</td>
+<td style="text-align: left;">Fault injection; circuit breaker monitoring; synthetic checks — must be deterministic and repeatable</td>
+<td style="text-align: left;">Document behavioral contracts; not just schemas; defensive coding at boundaries; circuit breakers as default</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Race conditions and timing dependencies</strong></td>
-<td>Pre-Commit — During development. Thread sanitizers and race detectors run locally and in CI.</td>
-<td>Thread sanitizers (TSan) and race detectors in CI; load/stress testing with concurrent users in pipeline; fuzz testing for concurrency paths; production anomaly detection for intermittent failures</td>
-<td>Design for idempotency by default; prefer queues and event sourcing over shared mutable state; establish lock ordering conventions; code review checklist item for concurrency safety</td>
+<td style="text-align: left;">Integration &amp; Boundaries</td>
+<td style="text-align: left;">Race conditions</td>
+<td style="text-align: left;">Pre-Commit</td>
+<td style="text-align: left;">Thread sanitizers (TSan); load testing with concurrency; fuzz testing; anomaly detection for intermittent failures</td>
+<td style="text-align: left;">Limited — can flag concurrency anti-patterns in PR review; but cannot replace formal detection tools</td>
+<td style="text-align: left;">TSan; race detectors; TLA+; fuzz testing — purpose-built formal tools. This is a tooling problem; not a judgment problem</td>
+<td style="text-align: left;">Design for idempotency; queues over shared mutable state; lock ordering conventions; concurrency review checklist</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Inconsistent state across distributed components</strong></td>
-<td>Design — During system design. Consistency model selection before implementation.</td>
-<td>Automated reconciliation jobs comparing state across services; distributed tracing (Jaeger, Zipkin) with anomaly detection; saga completion monitoring with alerting on stuck/failed sagas</td>
-<td>Choose consistency model deliberately per use case and document it; saga pattern with compensating transactions as default for distributed writes; event sourcing for audit and replay</td>
+<td style="text-align: left;">Integration &amp; Boundaries</td>
+<td style="text-align: left;">Inconsistent distributed state</td>
+<td style="text-align: left;">Design</td>
+<td style="text-align: left;">Reconciliation jobs; distributed tracing with anomaly detection; saga completion monitoring</td>
+<td style="text-align: left;">Review designs for missing compensation logic or consistency model mismatches — useful at design time</td>
+<td style="text-align: left;">Tracing (Jaeger/Zipkin); reconciliation; saga monitoring — continuous operational tools; deterministic</td>
+<td style="text-align: left;">Choose consistency model deliberately per use case; saga with compensating transactions; event sourcing</td>
 </tr>
 <tr>
-<td><strong>Knowledge &amp; Communication</strong></td>
-<td><strong>Implicit domain knowledge not captured in code</strong></td>
-<td>Coding — During development. Code review by domain experts; static analysis for magic numbers.</td>
-<td>Onboarding time tracking (how long until a new dev ships independently); automated detection of 'magic numbers' and undocumented business rules in static analysis; knowledge-concentration metrics from git (who can change what)</td>
-<td>Domain-driven design with ubiquitous language enforced in code reviews; embed business rules in code (not wikis); pair programming across experience levels; rotate ownership regularly</td>
+<td style="text-align: left;">Knowledge &amp; Communication</td>
+<td style="text-align: left;">Implicit domain knowledge not in code</td>
+<td style="text-align: left;">Coding</td>
+<td style="text-align: left;">Magic number detection in static analysis; git knowledge-concentration metrics; onboarding time tracking</td>
+<td style="text-align: left;">HIGH VALUE: Identify undocumented business rules; missing 'why' in code; and knowledge gaps a new dev would hit</td>
+<td style="text-align: left;">Git history analysis; code ownership metrics (CodeScene; git-fame) — counting/graphing problems</td>
+<td style="text-align: left;">DDD with ubiquitous language; embed rules in code not wikis; pair across experience levels; rotate ownership</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Misunderstood or ambiguous requirements</strong></td>
-<td>Requirements — Before coding starts. Example mapping and Three Amigos sessions.</td>
-<td>Track defects tagged as 'requirements gap' or 'misunderstanding'; automated BDD spec coverage (Cucumber, SpecFlow) showing untested scenarios; PR review bots flagging stories without acceptance criteria</td>
-<td>Three Amigos (dev, test, product) before work starts; example mapping sessions; executable specifications as the source of truth; given/when/then acceptance criteria required on every story</td>
+<td style="text-align: left;">Knowledge &amp; Communication</td>
+<td style="text-align: left;">Ambiguous requirements</td>
+<td style="text-align: left;">Requirements</td>
+<td style="text-align: left;">Flag stories without acceptance criteria; BDD spec coverage tracking; defect classification for 'requirements gap'</td>
+<td style="text-align: left;">HIGH VALUE: Review requirements for ambiguity; missing edge cases; contradictions; and unstated assumptions; generate test scenarios</td>
+<td style="text-align: left;">BDD coverage reports; story tracking; defect tagging — workflow tools (Jira; ADO) handle categorization</td>
+<td style="text-align: left;">Three Amigos before work starts; example mapping; executable specs as source of truth; given/when/then required</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Tribal knowledge loss during team turnover</strong></td>
-<td>Coding — Ongoing. Git history analysis for knowledge concentration.</td>
-<td>Bus factor analysis from git history (who exclusively owns which areas); automated knowledge-concentration alerts when a single author covers &gt;X% of a codebase area; documentation freshness checks</td>
-<td>Pair and mob programming as default; rotate on-call across all services; automate everything that currently requires 'ask Sarah'; living documentation generated from code and tests</td>
+<td style="text-align: left;">Knowledge &amp; Communication</td>
+<td style="text-align: left;">Tribal knowledge loss</td>
+<td style="text-align: left;">Coding</td>
+<td style="text-align: left;">Bus factor from git history; single-author concentration alerts; documentation freshness checks</td>
+<td style="text-align: left;">Generate documentation from code/tests; flag where docs have drifted from implementation</td>
+<td style="text-align: left;">Git analysis; bus factor scoring; last-modified checks — existing analysis tools handle this</td>
+<td style="text-align: left;">Pair/mob programming as default; rotate on-call; automate tribal knowledge; living docs from code</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Different mental models between teams</strong></td>
-<td>Design — During cross-team design. Context mapping and shared glossary reviews.</td>
-<td>Track cross-team integration defects separately; automated detection of divergent naming/terminology across codebases; API contract test failures as a proxy for misalignment</td>
-<td>Shared domain model with explicit bounded contexts; regular cross-team architecture syncs; explicit context mapping (upstream/downstream relationships documented and reviewed); shared glossary enforced via linting</td>
+<td style="text-align: left;">Knowledge &amp; Communication</td>
+<td style="text-align: left;">Divergent mental models across teams</td>
+<td style="text-align: left;">Design</td>
+<td style="text-align: left;">Cross-team integration defect tracking; divergent naming detection across codebases; contract test failures</td>
+<td style="text-align: left;">HIGH VALUE: Compare terminology and domain models across team codebases to detect semantic mismatches before integration failures</td>
+<td style="text-align: left;">Integration defect counts; contract failure rates — lagging indicators for dashboards</td>
+<td style="text-align: left;">Shared domain model; explicit bounded contexts; regular cross-team syncs; shared glossary enforced via linting</td>
 </tr>
 <tr>
-<td><strong>Change &amp; Complexity</strong></td>
-<td><strong>Unintended side effects from seemingly isolated changes</strong></td>
-<td>CI Pipeline — On every PR/commit. Automated test suites, mutation testing, impact analysis.</td>
-<td>Comprehensive automated test suites (unit, integration, e2e) in CI; mutation testing (Stryker, PIT) to validate test effectiveness; automated change impact analysis flagging affected downstream consumers</td>
-<td>Small, focused commits deployed independently; trunk-based development with short-lived branches; feature flags for decoupling deploy from release; require tests that prove the change is isolated</td>
+<td style="text-align: left;">Change &amp; Complexity</td>
+<td style="text-align: left;">Unintended side effects</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Automated test suites; mutation testing (Stryker; PIT); change impact analysis flagging downstream consumers</td>
+<td style="text-align: left;">Reason about semantic change impact beyond syntactic dependencies — 'this looks isolated but affects X because Y'</td>
+<td style="text-align: left;">Test execution; coverage; mutation scoring — deterministic; must remain so</td>
+<td style="text-align: left;">Small focused commits; trunk-based development; feature flags to decouple deploy from release</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Accumulated technical debt and workarounds</strong></td>
-<td>CI Pipeline — On every PR/commit. Static analysis trends and quality gates.</td>
-<td>Static analysis trends over time (cyclomatic complexity, code duplication, dependency cycles); defect density by module; track TODO/HACK/FIXME counts; SonarQube quality gate trends</td>
-<td>Continuous refactoring as part of every story (boy scout rule); dedicated tech debt budget (e.g. 20% of capacity); make debt visible on dashboards; treat rising complexity as a leading indicator and act on it</td>
+<td style="text-align: left;">Change &amp; Complexity</td>
+<td style="text-align: left;">Accumulated technical debt</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Complexity trends over time; duplication scoring; dependency cycles; TODO/HACK counts; SonarQube quality gates</td>
+<td style="text-align: left;">Identify architectural drift; abstraction decay; and calcified workarounds that static analysis misses</td>
+<td style="text-align: left;">Cyclomatic complexity; duplication; dependency cycles — measurement problems solved by static analysis</td>
+<td style="text-align: left;">Refactoring as part of every story; dedicated debt budget; boy scout rule; treat rising complexity as leading indicator</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Feature interactions nobody anticipated</strong></td>
-<td>Staging — During integration testing. Combinatorial testing and feature flag interaction checks.</td>
-<td>Combinatorial/pairwise testing automation; feature flag interaction matrix testing; production anomaly detection after releases; automated regression suites covering feature combinations</td>
-<td>Feature flags with controlled rollout and interaction awareness; modular design with explicit feature boundaries; canary deployments with automated rollback on anomaly detection</td>
+<td style="text-align: left;">Change &amp; Complexity</td>
+<td style="text-align: left;">Unanticipated feature interactions</td>
+<td style="text-align: left;">Staging</td>
+<td style="text-align: left;">Combinatorial/pairwise testing; feature flag interaction matrix; anomaly detection post-release; regression suites</td>
+<td style="text-align: left;">Reason about feature interactions semantically; flagging conflicts that testing matrices might miss</td>
+<td style="text-align: left;">Pairwise testing tools; flag management (LaunchDarkly); canary with auto-rollback — execution/infrastructure problems</td>
+<td style="text-align: left;">Feature flags with controlled rollout; modular design; canary deployments with auto-rollback on anomaly</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Configuration drift between environments</strong></td>
-<td>CI Pipeline — On every infra change. Drift detection and environment comparison in pipeline.</td>
-<td>Infrastructure-as-code drift detection (Terraform plan, AWS Config, Pulumi preview); automated environment comparison tools; smoke tests running in every environment after provisioning</td>
-<td>All infrastructure as code, no manual changes ever; immutable infrastructure (replace, don't patch); GitOps for environment management; identical provisioning for all environments from the same source</td>
+<td style="text-align: left;">Change &amp; Complexity</td>
+<td style="text-align: left;">Configuration drift</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">IaC drift detection (Terraform plan; Pulumi preview; AWS Config); environment comparison; smoke tests per environment</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Drift detection and environment comparison are deterministic comparison problems — fully solved by existing tooling</td>
+<td style="text-align: left;">All infrastructure as code; immutable infrastructure; GitOps; identical provisioning from same source</td>
 </tr>
 <tr>
-<td><strong>Testing &amp; Observability Gaps</strong></td>
-<td><strong>Untested edge cases and error paths</strong></td>
-<td>CI Pipeline — On every PR/commit. Mutation testing and branch coverage gates.</td>
-<td>Mutation testing showing surviving mutants; branch coverage (not just line coverage) in CI with minimum thresholds; property-based testing (Hypothesis, fast-check) generating edge cases automatically</td>
-<td>Require tests for every bug fix proving the fix works; property-based testing as a standard practice; boundary value analysis in test design; mutation testing scores as a quality gate</td>
+<td style="text-align: left;">Testing &amp; Observability Gaps</td>
+<td style="text-align: left;">Untested edge cases and error paths</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Mutation testing; branch coverage with thresholds; property-based testing (Hypothesis; fast-check)</td>
+<td style="text-align: left;">Analyze code paths and generate test cases for untested boundaries and error paths humans overlook</td>
+<td style="text-align: left;">Mutation testing; coverage measurement; property-based frameworks — deterministic execution engines</td>
+<td style="text-align: left;">Tests required for every bug fix; property-based testing as standard; boundary value analysis; mutation scores as gate</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Missing integration/contract tests at service boundaries</strong></td>
-<td>CI Pipeline — On every PR/commit. Boundary inventory audit; CI fails if contract tests missing.</td>
-<td>Automated service boundary inventory vs. contract test inventory; CI pipeline that fails if a new service endpoint lacks contract tests; dependency graph analysis showing untested edges. Audit each boundary for organizational control level (full/some/none) and verify appropriate testing strategy is in place — see 'Contract Testing Strategies' tab.</td>
-<td>Contract tests mandatory for every new service boundary — but the type of contract test depends on control level. Full control: CDC with Pact broker as central registry. Some influence: negotiated SLAs with integration tests. No control: consumer-side expectations + synthetic monitoring + anti-corruption layers. Alert when boundaries are added without tests. See 'Contract Testing Strategies' tab for full decision matrix.</td>
+<td style="text-align: left;">Testing &amp; Observability Gaps</td>
+<td style="text-align: left;">Missing contract tests at boundaries</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Boundary inventory vs. contract test inventory; CI fails if new endpoint lacks tests; untested dependency graph edges</td>
+<td style="text-align: left;">Identify boundaries lacking tests by understanding semantic service relationships beyond network connections</td>
+<td style="text-align: left;">Boundary inventory; CI config checks; Pact broker — binary question: 'does this boundary have a test?'</td>
+<td style="text-align: left;">Contract tests mandatory per new boundary; type varies by control level (see Contract Testing Strategies tab)</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Insufficient monitoring — defects escape undetected</strong></td>
-<td>Design — During service design. Production readiness checklist before launch.</td>
-<td>Observability coverage scoring (what % of services have dashboards, alerts, SLOs); automated checks for services missing health endpoints, structured logging, or trace propagation; SLO burn rate alerting</td>
-<td>Observability as a non-functional requirement on every service; production readiness checklist enforced before launch; SLOs defined for every user-facing path; on-call reviews that surface monitoring gaps</td>
+<td style="text-align: left;">Testing &amp; Observability Gaps</td>
+<td style="text-align: left;">Insufficient monitoring</td>
+<td style="text-align: left;">Design</td>
+<td style="text-align: left;">Observability coverage scoring; checks for missing health endpoints; structured logging; trace propagation; SLO burn rates</td>
+<td style="text-align: left;">Review architectures and flag observability gaps against production readiness checklists automatically</td>
+<td style="text-align: left;">Observability platforms (Datadog; Grafana; New Relic); SLO alerting — continuous operational tools</td>
+<td style="text-align: left;">Observability as NFR on every service; production readiness checklist enforced; SLOs for every user-facing path</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Test environments that don't reflect production</strong></td>
-<td>CI Pipeline — On every environment change. Automated parity checks in pipeline.</td>
-<td>Automated environment parity checks (compare versions, configs, schemas); synthetic transaction comparison across environments; infrastructure diff tools</td>
-<td>Same provisioning code for all environments; production-like data in staging (anonymized); containerization for consistency; test in production with feature flags and canary releases</td>
+<td style="text-align: left;">Testing &amp; Observability Gaps</td>
+<td style="text-align: left;">Test environments don't reflect production</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Automated environment parity checks; synthetic transaction comparison across environments; infra diff tools</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Environment parity is a deterministic comparison problem — IaC diff tools and config comparison handle this</td>
+<td style="text-align: left;">Same provisioning for all environments; production-like data in staging; containerization; test in prod with flags</td>
 </tr>
 <tr>
-<td><strong>Process &amp; Deployment</strong></td>
-<td><strong>Long-lived branches diverging from trunk</strong></td>
-<td>Pre-Commit — Continuously. Branch age monitoring with alerts before merge.</td>
-<td>Automated branch age tracking with alerts (e.g. branch &gt;1 day old); merge conflict frequency metrics; CI dashboard showing branch count and divergence</td>
-<td>Trunk-based development as the default; if branches exist, merge at least daily; CI rejects PRs from branches older than N hours; eliminate the need for feature branches via feature flags</td>
+<td style="text-align: left;">Process &amp; Deployment</td>
+<td style="text-align: left;">Long-lived branches</td>
+<td style="text-align: left;">Pre-Commit</td>
+<td style="text-align: left;">Branch age alerts; merge conflict frequency; CI dashboard showing branch count and divergence</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Branch age and conflict frequency are counting problems — git hooks and CI config handle enforcement</td>
+<td style="text-align: left;">Trunk-based development; merge at least daily; CI rejects stale branches; feature flags eliminate branch need</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Manual steps in build/deploy pipelines</strong></td>
-<td>CI Pipeline — On pipeline changes. Pipeline audit for manual steps; lead time tracking.</td>
-<td>Pipeline audit for manual gates/approvals; track deployment lead time (manual steps show as wait time); automated pipeline topology analysis showing non-automated steps</td>
-<td>Automate every step from commit to production; manual approvals only for regulatory requirements; treat pipeline automation as a first-class product; alert on any new manual step added</td>
+<td style="text-align: left;">Process &amp; Deployment</td>
+<td style="text-align: left;">Manual pipeline steps</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Pipeline audit for manual gates; deployment lead time (manual steps = wait time); pipeline topology analysis</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Pipeline topology is inspectable without judgment — CI/CD platform analytics show manual steps deterministically</td>
+<td style="text-align: left;">Automate every step commit-to-production; manual approvals only for regulatory; treat pipeline as first-class product</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Batching too many changes into a single release</strong></td>
-<td>CI Pipeline — On every deploy. Changes-per-deploy metrics with threshold alerts.</td>
-<td>Track changes-per-deploy (commits, stories, PRs per release); deployment frequency metrics (DORA); automated alerts when batch size exceeds threshold</td>
-<td>Continuous delivery — every commit is a release candidate; single-piece flow; decouple deploy from release using feature flags; small PRs as a team norm with size limits in CI</td>
+<td style="text-align: left;">Process &amp; Deployment</td>
+<td style="text-align: left;">Batching too many changes per release</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Changes-per-deploy metrics; deployment frequency (DORA); alerts when batch size exceeds threshold</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Batch size is a counting problem — Sleuth; LinearB; DORA dashboards handle this</td>
+<td style="text-align: left;">Continuous delivery — every commit is a candidate; single-piece flow; decouple deploy from release with flags</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Inadequate rollback capability</strong></td>
-<td>CI Pipeline — On every deploy. Automated rollback testing as part of deployment pipeline.</td>
-<td>Automated rollback testing (deploy, rollback, verify in CI); track mean time to rollback; chaos testing that triggers rollback procedures; database migration reversibility checks</td>
-<td>Blue/green or canary deployments as default; backward-compatible database migrations only; automated rollback on health check failure; practice rollbacks regularly, not just in emergencies</td>
+<td style="text-align: left;">Process &amp; Deployment</td>
+<td style="text-align: left;">Inadequate rollback capability</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Automated rollback testing in CI; mean time to rollback; migration reversibility checks</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Rollback capability is testable deterministically — infrastructure verification; health check automation</td>
+<td style="text-align: left;">Blue/green or canary as default; backward-compatible migrations only; auto-rollback on health failure; practice regularly</td>
 </tr>
 <tr>
-<td><strong>Data &amp; State</strong></td>
-<td><strong>Schema migration and backward compatibility failures</strong></td>
-<td>CI Pipeline — On every PR/commit. Schema compatibility checks in CI before merge.</td>
-<td>Automated schema compatibility checks in CI (Avro, protobuf compatibility modes); migration dry-runs against production-like data; backward compatibility test suites</td>
-<td>Expand-then-contract migration pattern always; never deploy a breaking schema change; schema registry with compatibility enforcement; migrations tested against a copy of production data</td>
+<td style="text-align: left;">Data &amp; State</td>
+<td style="text-align: left;">Schema migration / backward compat failures</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Schema compatibility checks (Avro; protobuf/buf); migration dry-runs against production-like data</td>
+<td style="text-align: left;">Predict downstream impact by understanding how consumers actually use data beyond formal compatibility</td>
+<td style="text-align: left;">Schema compatibility modes; breaking change detection (buf) — deterministic; must remain so</td>
+<td style="text-align: left;">Expand-then-contract always; never deploy breaking schema changes; schema registry with compat enforcement</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Null/missing data assumptions</strong></td>
-<td>Pre-Commit — During development. Static analysis for null safety; strict type checking.</td>
-<td>Static analysis for null safety (NullAway, TypeScript strict mode, Kotlin null checks); automated test generation for null inputs; production error monitoring for NullPointerException/undefined errors</td>
-<td>Use type systems that enforce null safety; Option/Maybe types as default; validate data at system boundaries; never assume upstream data is complete — assert and handle explicitly</td>
+<td style="text-align: left;">Data &amp; State</td>
+<td style="text-align: left;">Null/missing data assumptions</td>
+<td style="text-align: left;">Pre-Commit</td>
+<td style="text-align: left;">Null safety static analysis (NullAway; TypeScript strict); automated null-input test generation; production NPE monitoring</td>
+<td style="text-align: left;">Flag code where optional fields are used without null checks; even in languages without strict null safety</td>
+<td style="text-align: left;">Null safety type systems (Kotlin; TypeScript strict; Rust); static analysis (NullAway) — use the type system first</td>
+<td style="text-align: left;">Enforce null-safe type systems; Option/Maybe as default; validate at boundaries; assert and handle explicitly</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Concurrency and ordering issues</strong></td>
-<td>CI Pipeline — On every PR/commit. Thread sanitizers; load tests with randomized timing.</td>
-<td>Thread sanitizers and race detectors in CI; load tests with randomized timing; production monitoring for out-of-order processing; idempotency verification tests</td>
-<td>Design for out-of-order delivery by default; idempotent consumers; version vectors or sequence numbers on events; prefer immutable data structures</td>
+<td style="text-align: left;">Data &amp; State</td>
+<td style="text-align: left;">Concurrency and ordering issues</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Thread sanitizers; load tests with randomized timing; idempotency verification tests</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">TSan; race detectors; TLA+; model checkers — concurrency requires exhaustive exploration; not judgment</td>
+<td style="text-align: left;">Design for out-of-order delivery; idempotent consumers; version vectors on events; prefer immutable data</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Cache invalidation errors</strong></td>
-<td>Staging — During integration testing. Cache consistency monitoring; TTL verification.</td>
-<td>Cache consistency monitoring (compare cached vs. source values); automated TTL verification; synthetic transactions that detect stale data; alerting on cache hit rates anomalies</td>
-<td>Prefer short TTLs over complex invalidation logic; event-driven cache invalidation; cache-aside pattern with explicit invalidation on writes; monitor and alert on staleness, not just hit rates</td>
+<td style="text-align: left;">Data &amp; State</td>
+<td style="text-align: left;">Cache invalidation errors</td>
+<td style="text-align: left;">Staging</td>
+<td style="text-align: left;">Cache consistency monitoring (cached vs. source); TTL verification; stale data detection; hit rate anomaly alerts</td>
+<td style="text-align: left;">Review cache invalidation logic for incomplete paths or TTL/change-frequency mismatches at design and code review time</td>
+<td style="text-align: left;">Consistency monitoring; TTL checks; hit rate alerting — operational monitoring handled by observability tools</td>
+<td style="text-align: left;">Short TTLs over complex invalidation; event-driven invalidation; cache-aside with explicit invalidation; alert on staleness</td>
 </tr>
 <tr>
-<td><strong>Dependency &amp; Infrastructure</strong></td>
-<td><strong>Third-party library upgrades with breaking changes</strong></td>
-<td>CI Pipeline — On dependency updates. Automated upgrade PRs with full test suite execution.</td>
-<td>Automated dependency update PRs (Dependabot, Renovate) with full test suite execution; SCA tools flagging breaking version bumps; lock file drift detection</td>
-<td>Pin dependencies explicitly; automated upgrade PRs with test gates; evaluate libraries for API stability before adoption; maintain an abstraction layer over volatile dependencies</td>
+<td style="text-align: left;">Dependency &amp; Infrastructure</td>
+<td style="text-align: left;">Third-party library breaking changes</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Automated upgrade PRs (Dependabot; Renovate) with full test suite; SCA for breaking version bumps; lock file drift</td>
+<td style="text-align: left;">Review changelogs to assess breaking change risk and predict compatibility issues based on your actual API usage</td>
+<td style="text-align: left;">Dependabot; Renovate; SCA; lock file checks — automated dependency management with deterministic test gates</td>
+<td style="text-align: left;">Pin dependencies; automated upgrade PRs with test gates; abstract over volatile dependencies; evaluate stability before adoption</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Infrastructure differences across environments</strong></td>
-<td>CI Pipeline — On every infra change. Drift detection; config comparison in pipeline.</td>
-<td>Infrastructure-as-code drift detection; automated config comparison across environments; environment parity scoring dashboards</td>
-<td>Single source of truth for all environment definitions; immutable infrastructure; containerization (Docker) for app-level parity; GitOps with environment promotion, not separate definitions</td>
+<td style="text-align: left;">Dependency &amp; Infrastructure</td>
+<td style="text-align: left;">Infrastructure differences across environments</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">IaC drift detection; config comparison across environments; environment parity scoring</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Drift detection; config comparison; container verification; GitOps reconciliation — deterministic; fully solved</td>
+<td style="text-align: left;">Single source of truth for all environments; immutable infrastructure; containerization; GitOps with promotion</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Network partitions and partial failures handled incorrectly</strong></td>
-<td>Staging — During chaos/load testing. Fault injection and synthetic transaction monitoring.</td>
-<td>Chaos engineering injecting network failures (partitions, latency, packet loss); synthetic transaction monitoring; circuit breaker state monitoring and alerting</td>
-<td>Design for failure — circuit breakers, retries with backoff, bulkheads as defaults; test failure modes explicitly; runbooks for every known failure mode; game days practicing failure scenarios</td>
+<td style="text-align: left;">Dependency &amp; Infrastructure</td>
+<td style="text-align: left;">Network partitions / partial failures handled wrong</td>
+<td style="text-align: left;">Staging</td>
+<td style="text-align: left;">Chaos engineering (Gremlin; Litmus); synthetic transaction monitoring; circuit breaker state monitoring</td>
+<td style="text-align: left;">Review architectures for missing failure patterns (no circuit breaker; no retry/backoff; no bulkhead) at design time</td>
+<td style="text-align: left;">Chaos tools; synthetic monitoring; circuit breaker dashboards — runtime tools; deterministic and repeatable</td>
+<td style="text-align: left;">Design for failure as default; circuit breakers; retries; bulkheads; test failure modes explicitly; game days</td>
 </tr>
 </tbody>
 </table>
@@ -711,116 +785,138 @@
 <table>
 <thead>
 <tr>
-<th>Organizational Control</th>
-<th>Testing Approach</th>
-<th>How It Works</th>
-<th>Tools &amp; Implementation</th>
-<th>Automation Complexity</th>
-<th>Earliest Detection Stage</th>
-<th>Strengths</th>
-<th>Limitations &amp; Risks</th>
+<th style="text-align: left;">Control Level</th>
+<th style="text-align: left;">Approach</th>
+<th style="text-align: left;">How It Works</th>
+<th style="text-align: left;">Tools</th>
+<th style="text-align: left;">Automation Complexity</th>
+<th style="text-align: left;">Earliest Detection</th>
+<th style="text-align: left;">Where AI Adds Value</th>
+<th style="text-align: left;">Use Traditional Tooling</th>
+<th style="text-align: left;">Strengths</th>
+<th style="text-align: left;">Limitations</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Full Control (You own both consumer and provider)</strong></td>
-<td><strong>Consumer-Driven Contract Tests (CDC)</strong></td>
-<td>Consumer defines the contract (the subset of the provider API it actually uses). Provider verifies it can satisfy all consumer contracts. Contracts live in a shared broker. Both sides run tests in their own CI pipelines independently.</td>
-<td>Pact (most mature, polyglot); Spring Cloud Contract (JVM-native); Pactflow for enterprise broker. — CI integration: Consumer publishes contract on every build → Provider verifies on every build → Broker tracks compatibility matrix.</td>
-<td>Low–Medium</td>
-<td>CI Pipeline — On every PR. Consumer publishes contract → provider verifies in its own CI.</td>
-<td>Consumer only tests what it actually needs, not the full API surface; provider gets fast feedback on which consumers would break; enables independent deployability; contracts are living documentation of actual coupling.</td>
-<td>Requires team discipline to maintain contracts; initial setup cost for broker infrastructure; contract versioning can get complex with many consumers; doesn't test provider business logic, only shape.</td>
+<td style="text-align: left;">Full Control (Own both sides)</td>
+<td style="text-align: left;">Consumer-Driven Contracts (CDC)</td>
+<td style="text-align: left;">Consumer defines contract (subset of provider API it uses). Provider verifies it satisfies all consumer contracts. Shared broker tracks compatibility.</td>
+<td style="text-align: left;">Pact (polyglot); Spring Cloud Contract (JVM); Pactflow (enterprise broker). Consumer publishes on build → Provider verifies on build.</td>
+<td style="text-align: left;">Low–Med</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Generate initial contracts by analyzing consumer code for actual provider endpoint/field usage</td>
+<td style="text-align: left;">Contract verification; broker management; compat matrix — deterministic execution</td>
+<td style="text-align: left;">Tests only what consumer needs; enables independent deploy; contracts are living coupling documentation</td>
+<td style="text-align: left;">Requires discipline to maintain; initial broker setup cost; versioning complex with many consumers</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Bi-Directional Contract Tests</strong></td>
-<td>Both consumer and provider independently generate their API descriptions (e.g., consumer from mocks, provider from its running API). A broker compares them for compatibility. Neither side writes explicit tests for the other.</td>
-<td>Pactflow bi-directional feature; consumer generates Pact file from existing mocks (Wiremock, MSW, etc.) → provider generates OpenAPI spec from running app → Pactflow compares. — Alternative: Specmatic with OpenAPI specs on both sides.</td>
-<td>Low</td>
-<td>CI Pipeline — On every PR. Both sides generate specs independently → broker compares.</td>
-<td>Low adoption friction — teams keep their existing mocking/testing tools; no need to write explicit contract tests; works well when both teams already have good API specs; faster to get started than full CDC.</td>
-<td>Less precise than CDC — compares schemas, not behavioral expectations; can miss semantic mismatches (right shape, wrong meaning); requires both sides to keep specs accurate; newer approach with less community tooling.</td>
+<td style="text-align: left;">Full Control (Own both sides)</td>
+<td style="text-align: left;">Bi-Directional Contracts</td>
+<td style="text-align: left;">Both sides independently generate API descriptions (consumer from mocks; provider from running API). Broker compares for compatibility.</td>
+<td style="text-align: left;">Pactflow bi-directional; Specmatic with OpenAPI. Consumer generates Pact from existing mocks → Provider generates spec → broker compares.</td>
+<td style="text-align: left;">Low</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Explain semantic differences beyond schema shape — 'same name; different meaning'</td>
+<td style="text-align: left;">Schema comparison and compatibility checking — deterministic diff tools</td>
+<td style="text-align: left;">Low adoption friction; teams keep existing mocking tools; fast to start</td>
+<td style="text-align: left;">Less precise than CDC; can miss semantic mismatches; requires both sides to keep specs accurate</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Shared Schema/IDL Validation</strong></td>
-<td>Single source of truth schema (protobuf, Avro, Thrift, GraphQL SDL) that both consumer and provider compile against. CI enforces backward compatibility on every schema change. Code generation ensures type safety.</td>
-<td>Protobuf + buf (linting + breaking change detection); Avro with schema registry (Confluent) and compatibility modes (BACKWARD, FORWARD, FULL); GraphQL with schema registry. — buf breaking --against main in CI; Confluent Schema Registry compatibility checks on publish.</td>
-<td>Low</td>
-<td>Pre-Commit — At compile time. Schema compatibility checked on every change; code generation catches mismatches before commit.</td>
-<td>Strongest guarantees for data shape compatibility; breaking changes caught at compile time; code generation eliminates hand-written serialization bugs; single source of truth eliminates drift; mature, well-understood approach.</td>
-<td>Only validates data shape, not behavior or semantics; requires all teams to adopt the same IDL; schema evolution rules can be constraining; doesn't catch integration logic bugs; tight coupling to schema tooling.</td>
+<td style="text-align: left;">Full Control (Own both sides)</td>
+<td style="text-align: left;">Shared Schema/IDL Validation</td>
+<td style="text-align: left;">Single source of truth schema (protobuf; Avro; GraphQL SDL). Both sides compile against it. CI enforces backward compatibility. Code generation ensures type safety.</td>
+<td style="text-align: left;">protobuf + buf (lint + breaking change detection); Avro + Confluent Schema Registry; GraphQL schema registry.</td>
+<td style="text-align: left;">Low</td>
+<td style="text-align: left;">Pre-Commit</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">buf; Avro compat modes; protobuf checks — formal verification; must be provably correct</td>
+<td style="text-align: left;">Strongest shape guarantees; breaking changes caught at compile time; single source of truth</td>
+<td style="text-align: left;">Only validates shape; not behavior; requires all teams on same IDL; doesn't catch logic bugs</td>
 </tr>
 <tr>
-<td><strong>Some Influence (Internal teams you don't own but can collaborate with)</strong></td>
-<td><strong>Provider-Published Contracts (Provider-Driven)</strong></td>
-<td>Provider team publishes their API contract (OpenAPI spec, AsyncAPI, etc.). Consumer validates their usage against the published spec. Provider may or may not run consumer contracts, but does commit to the published spec as a stable interface.</td>
-<td>OpenAPI spec published to a shared registry or repo; consumer uses Specmatic, Prism, or Schemathesis to test against the spec. — CI: Provider lints/validates spec on every PR → Consumer validates its calls against latest published spec.</td>
-<td>Low–Medium</td>
-<td>CI Pipeline — On every PR. Consumer validates against published provider spec in CI.</td>
-<td>Works without requiring the provider to run your tests; provider spec becomes a stable contract they commit to; consumer gets fast feedback against a real spec; good stepping stone toward full CDC if relationship matures.</td>
-<td>Provider may change spec without warning if governance is weak; you're trusting their spec is accurate (it may drift from actual behavior); no guarantee they test against your use cases; one-directional — you catch your breaks, not theirs.</td>
+<td style="text-align: left;">Some Influence (Internal; not owned)</td>
+<td style="text-align: left;">Provider-Published Specs</td>
+<td style="text-align: left;">Provider publishes API contract (OpenAPI; AsyncAPI). Consumer validates usage against published spec. Provider commits to spec as stable interface.</td>
+<td style="text-align: left;">OpenAPI in shared registry; consumer validates via Specmatic; Prism; or Schemathesis against latest published spec.</td>
+<td style="text-align: left;">Low–Med</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Review provider specs against your actual usage to identify which changes matter to you</td>
+<td style="text-align: left;">Spec linting; schema validation; consumer test execution — deterministic</td>
+<td style="text-align: left;">Works without provider running your tests; fast feedback against real spec</td>
+<td style="text-align: left;">Provider may change spec without warning; trusting spec accuracy; one-directional</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>API Snapshot / Record-Replay Testing</strong></td>
-<td>Record real API interactions from integration/staging environments. Store as snapshots. Replay against provider in CI to detect changes. Alert when responses diverge from recorded baseline.</td>
-<td>Hoverfly, VCR (Ruby), Polly.JS, WireMock recording mode; Karate for API snapshot comparison. — CI: Periodic recording job refreshes snapshots → Consumer tests replay against snapshots → Divergence triggers investigation.</td>
-<td>Medium</td>
-<td>CI Pipeline — On every build. Replay recorded snapshots and detect divergence.</td>
-<td>Captures actual behavior, not just documented contracts; works without any provider cooperation; catches behavioral changes that schema checks miss; good for APIs where you can't get a reliable spec.</td>
-<td>Snapshots go stale — need regular refresh cycles; recording from staging may not match production; brittle if API has dynamic content (timestamps, IDs); maintenance burden grows with API surface; doesn't prevent breaks, only detects them.</td>
+<td style="text-align: left;">Some Influence (Internal; not owned)</td>
+<td style="text-align: left;">API Snapshot / Record-Replay</td>
+<td style="text-align: left;">Record real API interactions from staging. Store as snapshots. Replay in CI to detect changes. Alert on divergence from baseline.</td>
+<td style="text-align: left;">Hoverfly; VCR; Polly.JS; WireMock recording; Karate for comparison. Periodic refresh → replay → alert on divergence.</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Flag semantic changes (same shape; different meaning) that schema comparison misses; identify stale snapshots</td>
+<td style="text-align: left;">Recording; replay; comparison — deterministic mechanics (Hoverfly; VCR; WireMock)</td>
+<td style="text-align: left;">Captures actual behavior; not just docs; works without provider cooperation</td>
+<td style="text-align: left;">Snapshots go stale; staging may not match prod; brittle with dynamic content</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Negotiated SLAs with Integration Tests</strong></td>
-<td>Negotiate a lightweight SLA with the provider team: response time, error rates, uptime, and a stable subset of endpoints. Run integration tests in a shared environment that validate the SLA. Both teams are alerted on failures.</td>
-<td>Shared integration environment with synthetic transactions; PagerDuty/OpsGenie for SLA breach alerts; custom integration test suites in CI or scheduled runs. — Governance: SLA document in shared repo; quarterly review meeting; integration test ownership shared or by consumer.</td>
-<td>Medium</td>
-<td>Staging — During integration testing. Synthetic transactions validate SLA in shared environment.</td>
-<td>Formalizes the relationship without requiring contract test infrastructure; SLA breaches create shared accountability; integration tests catch real-world issues including performance; works well with teams that are willing but not yet set up for CDC.</td>
-<td>Integration tests are slower and flakier than contract tests; shared environments are fragile and contested; SLAs require ongoing negotiation and review; doesn't catch breaking changes before deployment — only after.</td>
+<td style="text-align: left;">Some Influence (Internal; not owned)</td>
+<td style="text-align: left;">Negotiated SLAs + Integration Tests</td>
+<td style="text-align: left;">Negotiate lightweight SLA (response time; error rates; uptime; stable endpoints). Run integration tests in shared environment validating SLA. Both teams alerted on failure.</td>
+<td style="text-align: left;">Shared integration environment with synthetic transactions; PagerDuty/OpsGenie for SLA breach alerts. SLA doc in shared repo with quarterly review.</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">Staging</td>
+<td style="text-align: left;">Draft initial SLA proposals by analyzing actual service behavior and your usage patterns; review SLAs for ambiguity</td>
+<td style="text-align: left;">SLA monitoring; synthetic transactions; breach alerting — operational tools; deterministic</td>
+<td style="text-align: left;">Formalizes relationship; SLA breaches create shared accountability; catches performance issues</td>
+<td style="text-align: left;">Integration tests are slower/flakier; shared environments are fragile; only detects after deployment</td>
 </tr>
 <tr>
-<td><strong>No Control (Third-party APIs, SaaS vendors, public APIs)</strong></td>
-<td><strong>Consumer-Side Contract Tests (Self-Published Expectations)</strong></td>
-<td>Consumer writes tests defining the exact subset of the third-party API they depend on — expected endpoints, response shapes, status codes. Run against mocks in CI, and periodically verify against the real API. Detect drift before it hits production.</td>
-<td>Pact consumer-side only (without provider verification); Specmatic with your own OpenAPI spec of their API; custom test suites with JSON Schema validation. — CI: Unit tests against mocks → Scheduled job (daily/weekly) runs same tests against real API → Alert on divergence.</td>
-<td>Medium</td>
-<td>CI Pipeline — On every build (against mocks). Scheduled verification against real API (daily/weekly).</td>
-<td>You own the definition of what you expect; catches drift before production impact; mocks keep CI fast; scheduled real-API runs give early warning; works with any API regardless of provider cooperation.</td>
-<td>Your expectations may be wrong or incomplete; scheduled verification means there's a lag before you detect changes; real-API runs can be rate-limited or costly; no guarantee you learn about deprecations before they happen.</td>
+<td style="text-align: left;">No Control (Third-party / SaaS)</td>
+<td style="text-align: left;">Consumer-Side Expectations</td>
+<td style="text-align: left;">Write tests defining exact subset of third-party API you depend on. Run against mocks in CI. Periodically verify against real API. Detect drift before production.</td>
+<td style="text-align: left;">Pact consumer-only; Specmatic with your own spec of their API; JSON Schema validation. CI against mocks → scheduled real-API verification → alert on divergence.</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Generate expectations by analyzing codebase for every third-party API call and response dependency</td>
+<td style="text-align: left;">Running tests against mocks and scheduling real-API checks — test framework and cron job problems</td>
+<td style="text-align: left;">You own the definition; catches drift pre-production; mocks keep CI fast</td>
+<td style="text-align: left;">Your expectations may be wrong; lag before detecting changes; real-API runs can be rate-limited</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>API Canary / Synthetic Monitoring</strong></td>
-<td>Continuously run lightweight synthetic transactions against the live third-party API from production (or a dedicated canary environment). Monitor response shape, latency, error rates. Alert on any change from established baseline.</td>
-<td>Checkly, Datadog Synthetics, Grafana Synthetic Monitoring, AWS CloudWatch Synthetics; custom scripts in Lambda/Cloud Functions on cron. — Setup: Define critical API paths → Synthetic transactions every 1-5 min → Alert on shape/status/latency deviation.</td>
-<td>Low–Medium</td>
-<td>Production — Continuous in production. Synthetic transactions every 1–5 minutes detect changes in near-real-time.</td>
-<td>Catches issues in near-real-time in the actual production environment; low setup cost for critical paths; monitors availability and performance alongside correctness; works with any API — zero provider cooperation needed.</td>
-<td>Only tests the paths you define — can miss edge cases; rate limits and costs for frequent checks; doesn't catch breaking changes before they deploy — only after; limited depth (smoke-test level, not comprehensive).</td>
+<td style="text-align: left;">No Control (Third-party / SaaS)</td>
+<td style="text-align: left;">API Canary / Synthetic Monitoring</td>
+<td style="text-align: left;">Continuously run synthetic transactions against live third-party API. Monitor response shape; latency; error rates. Alert on deviation from baseline.</td>
+<td style="text-align: left;">Checkly; Datadog Synthetics; Grafana Synthetic Monitoring; CloudWatch Synthetics. Critical paths every 1–5 min → alert on deviation.</td>
+<td style="text-align: left;">Low–Med</td>
+<td style="text-align: left;">Production</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Synthetic monitoring needs reliability and consistency; not intelligence — purpose-built tools</td>
+<td style="text-align: left;">Near-real-time detection; low setup for critical paths; monitors availability + correctness</td>
+<td style="text-align: left;">Only tests defined paths; rate limits; doesn't catch changes pre-deploy; smoke-test depth</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Adapter / Anti-Corruption Layer with Automated Boundary Tests</strong></td>
-<td>Wrap the third-party API in an adapter layer (anti-corruption layer) that translates their model to your domain model. Test the adapter extensively. When the external API changes, only the adapter needs updating — your domain code is insulated.</td>
-<td>Adapter pattern implementation in your codebase; comprehensive unit and integration tests on the adapter; Testcontainers or WireMock for simulating the external API in CI. — CI: Adapter unit tests with mocks → Integration tests against simulated API → Scheduled verification against real API.</td>
-<td>Medium–High</td>
-<td>CI Pipeline — On every PR. Adapter unit/integration tests catch boundary issues before merge.</td>
-<td>Insulates your entire codebase from third-party changes; change surface is one adapter, not scattered API calls; adapter tests are fast and stable; enables easy provider substitution; domain model stays clean.</td>
-<td>Higher upfront engineering cost; adapter itself can have bugs; still need to detect external changes (via canary/synthetic monitoring); adds a layer of indirection; over-engineering if the integration is simple.</td>
+<td style="text-align: left;">No Control (Third-party / SaaS)</td>
+<td style="text-align: left;">Anti-Corruption Layer + Boundary Tests</td>
+<td style="text-align: left;">Wrap third-party API in adapter translating their model to your domain. Test adapter extensively. External changes only require adapter updates — domain code insulated.</td>
+<td style="text-align: left;">Adapter pattern; unit/integration tests on adapter; Testcontainers or WireMock for simulation. Adapter tests in CI → scheduled verification against real API.</td>
+<td style="text-align: left;">Med–High</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Help design the adapter by analyzing third-party API surface and your domain model to suggest translation mapping</td>
+<td style="text-align: left;">Adapter unit tests; simulated API tests; CI execution — deterministic boundary testing</td>
+<td style="text-align: left;">Insulates codebase; change surface is one adapter; enables provider substitution; clean domain model</td>
+<td style="text-align: left;">Higher upfront cost; adapter can have bugs; still need canary for external change detection</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>Vendor Changelog Monitoring + Automated Regression</strong></td>
-<td>Monitor the third-party vendor's changelog, status page, and developer communications for announced changes. Automatically trigger a regression test suite when changes are detected. Combine with synthetic monitoring for unannounced changes.</td>
-<td>RSS/webhook monitoring on vendor changelog and status pages (Feedly, custom Lambda); GitHub Actions or similar triggered by changelog updates; regression suite targeting affected API areas. — Auto: Changelog watcher → triggers targeted regression suite → alerts team with change summary + test results.</td>
-<td>Medium–High</td>
-<td>Post-Release — When vendor announces changes. Changelog monitor triggers targeted regression suite.</td>
-<td>Proactive — catches changes before they affect you; combines vendor communication with automated verification; targeted regression reduces noise; builds institutional knowledge of vendor change patterns.</td>
-<td>Vendors don't always announce changes (or announce them late); changelog parsing can be brittle; high maintenance if vendor changes frequently; doesn't help with unannounced breaking changes; requires investment in monitoring infrastructure.</td>
+<td style="text-align: left;">No Control (Third-party / SaaS)</td>
+<td style="text-align: left;">Vendor Changelog Monitoring</td>
+<td style="text-align: left;">Monitor vendor changelog; status page; and dev communications. Auto-trigger regression suite on detected changes. Combine with synthetic monitoring for unannounced changes.</td>
+<td style="text-align: left;">RSS/webhook monitoring on vendor pages; GitHub Actions triggered by changelog updates; targeted regression suite on affected areas.</td>
+<td style="text-align: left;">Med–High</td>
+<td style="text-align: left;">Post-Release</td>
+<td style="text-align: left;">HIGH VALUE: Parse vendor changelogs and release notes to assess impact on your integration — strong NLU use case</td>
+<td style="text-align: left;">Triggering regression suites from webhooks and running tests — automation/CI; not AI</td>
+<td style="text-align: left;">Proactive; combines vendor comms with verification; builds knowledge of vendor patterns</td>
+<td style="text-align: left;">Vendors don't always announce changes; changelog parsing brittle; high maintenance</td>
 </tr>
 </tbody>
 </table>
@@ -881,9 +977,25 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.tracking", "navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.cd18aaf1.min.js?v=20260212132555"></script>
+      <script src="../assets/javascripts/bundle.cd18aaf1.min.js?v=20260212135710"></script>
       
-        <script src="../js/cache-bust.js?v=20260212132555"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js?v=20260212135710"></script>
+      
+        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js?v=20260212135710"></script>
+      
+        <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js?v=20260212135710"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js?v=20260212135710"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js?v=20260212135710"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js?v=20260212135710"></script>
+      
+        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js?v=20260212135710"></script>
+      
+        <script src="../js/datatables-init.js?v=20260212135710"></script>
+      
+        <script src="../js/cache-bust.js?v=20260212135710"></script>
       
     
   </body>
