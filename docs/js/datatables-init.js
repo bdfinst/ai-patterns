@@ -16,6 +16,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 table.id = 'datatable-' + index;
             }
 
+            // Build column width definitions based on table structure
+            var colCount = table.querySelectorAll('thead th').length;
+            var narrowCols = [];
+
+            if (colCount === 7) {
+                // Defect catalog: Category, Defect Cause, Earliest Detection, Auto Detection
+                narrowCols = [
+                    { targets: [0, 1], width: '8%' },
+                    { targets: [2, 3], width: '6%' }
+                ];
+            } else if (colCount === 11) {
+                // Contract testing: Control Level, Complexity, Detection Point, Detection Type
+                narrowCols = [
+                    { targets: [0], width: '7%' },
+                    { targets: [4, 5, 6], width: '5%' }
+                ];
+            }
+
             // Initialize DataTable with export buttons
             try {
                 $('#' + table.id).DataTable({
@@ -38,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     autoWidth: false,
                     scrollX: false, // Disable horizontal scrolling
                     info: true, // Show "Showing X entries" info
-                    columnDefs: [
+                    columnDefs: narrowCols.concat([
                         {
                             targets: '_all',
                             className: 'dt-body-left dt-head-left',
@@ -50,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 return data;
                             }
                         }
-                    ]
+                    ])
                 });
             } catch (e) {
                 console.error('Error initializing DataTable for table ' + table.id + ':', e);
