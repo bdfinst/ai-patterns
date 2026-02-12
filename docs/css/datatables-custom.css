@@ -24,7 +24,7 @@
 /* Table styling improvements */
 table.dataTable {
     width: 100% !important;
-    margin: 1em 2em 1em 0; /* Add right margin to prevent crowding */
+    margin: 1em 4em 1em 0; /* Right margin for space from view edge */
     table-layout: fixed; /* Fixed layout for better column control */
     font-size: 0.7rem; /* Match nav menu font size */
 }
@@ -105,15 +105,29 @@ table.dataTable tbody tr:hover {
 .dataTables_wrapper {
     overflow-x: hidden;
     width: 100%;
-    margin-right: 2rem; /* Add right margin to wrapper */
+    margin-right: 4rem; /* Space from right edge of view */
 }
 
 /* Ensure table container doesn't overflow */
 .md-typeset table {
     display: table;
-    width: 100%;
+    width: calc(100% - 4rem);
     table-layout: fixed;
     font-size: 0.7rem; /* Match nav menu font size */
+    margin-right: 4rem; /* Space from right edge of view */
+}
+
+/* Narrow columns for short label/phrase content */
+.md-typeset table th:nth-child(1),
+.md-typeset table td:nth-child(1),
+.md-typeset table th:nth-child(2),
+.md-typeset table td:nth-child(2),
+.md-typeset table th:nth-child(3),
+.md-typeset table td:nth-child(3),
+.md-typeset table th:nth-child(4),
+.md-typeset table td:nth-child(4) {
+    width: 8%;
+    white-space: normal;
 }
 
 /* Allow code/pre elements in tables to wrap */
