@@ -26,7 +26,7 @@ table.dataTable {
     width: 100% !important;
     margin: 1em 2em 1em 0; /* Add right margin to prevent crowding */
     table-layout: fixed; /* Fixed layout for better column control */
-    font-size: 0.85rem; /* Reduce text size for better fit */
+    font-size: 0.7rem; /* Match nav menu font size */
 }
 
 table.dataTable thead th {
@@ -34,7 +34,7 @@ table.dataTable thead th {
     border-bottom: 2px solid #ddd;
     padding: 10px 8px; /* Slightly reduced padding */
     font-weight: 600;
-    font-size: 0.875rem; /* Slightly larger than body for headers */
+    font-size: 0.7rem; /* Match nav menu font size */
     white-space: normal; /* Allow header text to wrap */
     word-wrap: break-word;
 }
@@ -46,7 +46,7 @@ table.dataTable tbody td {
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-width: 0; /* Enable text wrapping with fixed layout */
-    font-size: 0.85rem; /* Smaller font size for table content */
+    font-size: 0.7rem; /* Match nav menu font size */
     line-height: 1.5; /* Maintain readability with proper line height */
 }
 
@@ -113,6 +113,7 @@ table.dataTable tbody tr:hover {
     display: table;
     width: 100%;
     table-layout: fixed;
+    font-size: 0.7rem; /* Match nav menu font size */
 }
 
 /* Allow code/pre elements in tables to wrap */
