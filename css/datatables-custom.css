@@ -13,7 +13,7 @@
     border-radius: 4px;
     cursor: pointer;
     margin-right: 8px;
-    font-size: 14px;
+    font-size: 0.875rem; /* Consistent button font size */
     transition: background-color 0.3s;
 }
 
@@ -24,26 +24,30 @@
 /* Table styling improvements */
 table.dataTable {
     width: 100% !important;
-    margin: 1em 0;
+    margin: 1em 2em 1em 0; /* Add right margin to prevent crowding */
     table-layout: fixed; /* Fixed layout for better column control */
+    font-size: 0.85rem; /* Reduce text size for better fit */
 }
 
 table.dataTable thead th {
     background-color: #f5f5f5;
     border-bottom: 2px solid #ddd;
-    padding: 12px 8px;
+    padding: 10px 8px; /* Slightly reduced padding */
     font-weight: 600;
+    font-size: 0.875rem; /* Slightly larger than body for headers */
     white-space: normal; /* Allow header text to wrap */
     word-wrap: break-word;
 }
 
 table.dataTable tbody td {
-    padding: 10px 8px;
+    padding: 8px 8px; /* Reduced padding for more compact rows */
     vertical-align: top;
     white-space: normal; /* Allow cell text to wrap */
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-width: 0; /* Enable text wrapping with fixed layout */
+    font-size: 0.85rem; /* Smaller font size for table content */
+    line-height: 1.5; /* Maintain readability with proper line height */
 }
 
 table.dataTable tbody tr:hover {
@@ -51,11 +55,16 @@ table.dataTable tbody tr:hover {
 }
 
 /* Search box styling */
+.dataTables_filter {
+    font-size: 0.875rem;
+}
+
 .dataTables_filter input {
     padding: 6px 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
     margin-left: 8px;
+    font-size: 0.875rem;
 }
 
 /* Pagination styling */
@@ -80,7 +89,7 @@ table.dataTable tbody tr:hover {
 /* Info text styling */
 .dataTables_info {
     padding-top: 1em;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #666;
 }
 
@@ -96,6 +105,7 @@ table.dataTable tbody tr:hover {
 .dataTables_wrapper {
     overflow-x: hidden;
     width: 100%;
+    margin-right: 2rem; /* Add right margin to wrapper */
 }
 
 /* Ensure table container doesn't overflow */
