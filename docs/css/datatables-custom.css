@@ -1,0 +1,86 @@
+/* DataTables custom styles */
+
+/* Export buttons styling */
+.dt-buttons {
+    margin-bottom: 1rem;
+}
+
+.btn-export {
+    background-color: #3f51b5;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-export:hover {
+    background-color: #303f9f;
+}
+
+/* Table styling improvements */
+table.dataTable {
+    width: 100% !important;
+    margin: 1em 0;
+}
+
+table.dataTable thead th {
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+    padding: 12px 8px;
+    font-weight: 600;
+}
+
+table.dataTable tbody td {
+    padding: 10px 8px;
+    vertical-align: top;
+}
+
+table.dataTable tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Search box styling */
+.dataTables_filter input {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-left: 8px;
+}
+
+/* Pagination styling */
+.dataTables_paginate .paginate_button {
+    padding: 6px 12px;
+    margin: 0 2px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dataTables_paginate .paginate_button.current {
+    background-color: #3f51b5;
+    color: white !important;
+    border-color: #3f51b5;
+}
+
+.dataTables_paginate .paginate_button:hover:not(.current) {
+    background-color: #f5f5f5;
+}
+
+/* Info text styling */
+.dataTables_info {
+    padding-top: 1em;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Length menu styling */
+.dataTables_length select {
+    padding: 4px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 0 8px;
+}
