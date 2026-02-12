@@ -58,6 +58,7 @@ nav:
       - Agentic Code Review Guide: agentic-code-review.md
       - AI Development Playbook: ai-development-playbook.md
       - CD Defect Detection and Remediation Cheat Sheet: defect-detection-and-fixes.md
+      - Contract Testing Strategies: contract-testing-strategies.md
   - Articles:
       - AI is a High Pass Filter for Software Delivery: https://bryanfinster.substack.com/p/ai-is-a-high-pass-filter-for-software
       - Incorporating AI Without Crashing: https://bryanfinster.substack.com/p/incorporating-ai-without-crashing

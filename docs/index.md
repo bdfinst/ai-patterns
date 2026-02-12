@@ -9,9 +9,10 @@ The current patterns I'm using and hardening for delivering enterprise software 
 - **[Automated Code Review with AI Agents Reference Architecture](agentic-code-review.md)** - A hybrid approach combining deterministic rules-based tooling with context-aware AI agents to automate everything that can be automated about code review.
 
 - **[Leading an Agentic Development Team](ai-development-playbook.md)** - A playbook for leading AI agents as team members, covering mission setting, acceptance-test-driven development, building focused specialist agents, and validating outcomes over activity.
-- **[CD Defect Detection and Remediation Cheat Sheet](defect-detection-and-fixes.md)** - A growing list of where
-  defects are created in the value stream, examples of automated detection methods, and suggested remediation for that
-  class of defect.
+
+- **[CD Defect Detection and Remediation Cheat Sheet](defect-detection-and-fixes.md)** - A comprehensive catalog of where defects are created in the value stream, methods for automated detection, and systemic remediation strategies.
+
+- **[Contract Testing Strategies](contract-testing-strategies.md)** - A comprehensive guide to different contract testing approaches based on your level of organizational control over the services you integrate with.
 
 ## Articles
 

@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Initialize DataTable with export buttons
             try {
                 $('#' + table.id).DataTable({
-                    dom: 'Bfrtip',
+                    dom: 'Bfrtip', // Buttons, filter, table, info, pagination
                     buttons: [
                         {
                             extend: 'csvHtml5',
@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded', function() {
                             className: 'btn-export'
                         }
                     ],
-                    pageLength: 25,
-                    lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+                    paging: false, // Disable pagination - show all rows
                     order: [], // No default sorting
                     responsive: true,
                     autoWidth: false,
                     scrollX: false, // Disable horizontal scrolling
+                    info: true, // Show "Showing X entries" info
                     columnDefs: [
                         {
                             targets: '_all',
