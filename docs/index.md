@@ -19,3 +19,7 @@ The current patterns I'm using and hardening for delivering enterprise software 
 - **[AI is a High Pass Filter for Software Delivery](https://bryanfinster.substack.com/p/ai-is-a-high-pass-filter-for-software)** - Why AI amplifies your engineering discipline—teams with strong practices get dramatic improvements, while those without discipline struggle with generated garbage.
 
 - **[Incorporating AI Without Crashing](https://bryanfinster.substack.com/p/incorporating-ai-without-crashing)** - A practical roadmap for integrating AI into existing teams, starting with foundational delivery challenges before jumping to code generation.
+
+## Example Skill libraries
+
+- **[Paul Hammond's Skills](https://github.com/citypaul/.dotfiles/tree/main/claude/.claude)**
