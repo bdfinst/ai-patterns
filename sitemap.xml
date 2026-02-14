@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://bdfinst.github.io/ai-patterns/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bdfinst.github.io/ai-patterns/agentic-code-review/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bdfinst.github.io/ai-patterns/ai-development-playbook/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bdfinst.github.io/ai-patterns/contract-testing-strategies/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bdfinst.github.io/ai-patterns/defect-detection-and-fixes/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-02-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
