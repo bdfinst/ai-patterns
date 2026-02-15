@@ -20,6 +20,8 @@ The current patterns I'm using and hardening for delivering enterprise software 
 
 - **[Incorporating AI Without Crashing](https://bryanfinster.substack.com/p/incorporating-ai-without-crashing)** - A practical roadmap for integrating AI into existing teams, starting with foundational delivery challenges before jumping to code generation.
 
+- **[Write-Only Code](https://www.heavybit.com/library/article/write-only-code)** - An exploration of code that is difficult to read and understand, and strategies for writing code that remains maintainable.
+
 ## Example Skill libraries
 
 - **[Paul Hammond's Skills](https://github.com/citypaul/.dotfiles/tree/main/claude/.claude)**
