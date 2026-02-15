@@ -23,3 +23,5 @@ The current patterns I'm using and hardening for delivering enterprise software 
 ## Example Skill libraries
 
 - **[Paul Hammond's Skills](https://github.com/citypaul/.dotfiles/tree/main/claude/.claude)**
+
+- **[Robust Skills](https://github.com/ccheney/robust-skills)** - A collection of architectural and development skills for AI-assisted coding, covering backend patterns (DDD, Clean Architecture), frontend structure (Feature-Sliced Design), modern CSS and JavaScript practices, database design with PostgreSQL and Drizzle, system visualization with Mermaid, and Slack app development.
