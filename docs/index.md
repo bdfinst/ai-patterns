@@ -29,3 +29,5 @@ The current patterns I'm using and hardening for delivering enterprise software 
 - **[Robust Skills](https://github.com/ccheney/robust-skills)** - A collection of architectural and development skills for AI-assisted coding, covering backend patterns (DDD, Clean Architecture), frontend structure (Feature-Sliced Design), modern CSS and JavaScript practices, database design with PostgreSQL and Drizzle, system visualization with Mermaid, and Slack app development.
 
 - **[Quickstart: Agent-Augmented Development](https://sddevelopment-be.github.io/quickstart_agent-augmented-development/)** - A quickstart guide for getting started with agent-augmented development.
+
+- **[nwave.ai](https://nwave.ai/)** - AI-powered development tools and resources.
