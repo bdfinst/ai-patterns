@@ -31,3 +31,4 @@ The current patterns I'm using and hardening for delivering enterprise software 
 - **[Quickstart: Agent-Augmented Development](https://sddevelopment-be.github.io/quickstart_agent-augmented-development/)** - A quickstart guide for getting started with agent-augmented development.
 
 - **[nwave.ai](https://nwave.ai/)** - AI-powered development tools and resources.
+- **[Holon: Agentic Coder](https://github.com/thomashan/holon-agentic-coder)** - Fractal, self-learning coding agents.
